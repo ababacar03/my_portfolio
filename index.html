@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Materialize CSS CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Materialize JS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body class="grey lighten-4"> 
+    <!-- Navbar -->
+    <nav class="teal lighten-1">
+        <div class="nav-wrapper container">
+            <a href="index.html" class="brand-logo">Ababacar Ndiaye</a>
+            <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="last_projects.html">Projets</a></li>
+                <li><a href="about_me.html">À propos de moi</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Menu Mobile -->
+    <ul class="sidenav teal lighten-1" id="mobile-menu">
+        <li><a class="white-text" href="index.html">Accueil</a></li>
+        <li><a class="white-text" href="last_projects.html">Projets</a></li>
+        <li><a class="white-text" href="about_me.html">À propos de moi</a></li>
+    </ul>
+    <script>
+        $(document).ready(function(){
+            // Initialiser le menu pour mobile
+            $('.sidenav').sidenav();
+        });
+    </script>
+    
+  
+    <div class="container">
+        <div class="row">
+            <div class="col s4 m2 offset-m2"> 
+                <h3 class="grey-text text-darken-2">Mon CV</h3>
+                <p>Vous pouvez télécharger mon CV en utilisant le bouton ci-dessous :</p>
+                <a href="images/CVABABACAR.pdf" class="btn teal lighten-1 white-text" download>Télécharger CV</a>
+            </div>
+            <!-- Profil -->
+            <div class="col s12 m4"> 
+                <h3 class="grey-text text-darken-2">Profil</h3> 
+                <div class="card" style="background-color: #26a69a;"> 
+                    <div class="card-content white-text">
+                        <div class="row">
+                            <div class="col s10">
+                                <img src="images/photo_identité_page-0001.jpg" alt="Photo de Profil" class="circle responsive-img"> <!-- Photo de Profil -->
+                            </div>
+                            <div class="col s8">
+                                <p>Je m'appelle Ababacar Ndiaye, je suis étudiant en 3ème année
+                                    pré-MSC à Epitech Lille. J'ai toujours été passionné par
+                                    l'informatique et les jeux vidéo, ce qui fait de moi une personne
+                                    curieuse qui aime découvrir et essayer de nouvelles choses.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://github.com/ababacar03" class="white-text">GitHub</a>
+                        <a href="https://www.linkedin.com/in/ababacar-ndiaye-793a32302/" class="white-text">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12"></div>
+                <h2 class="center-align grey-text text-darken-2"><br/><br/><br/><br/>BONJOUR ! VOUS ÊTES BIENVENU<br/> SUR MON PORTFOLIO</h2> 
+                <div class="row center-align">
+                    <button class="btn waves-effect waves-light" type="submit" name="action" href="">
+                        <i class="material-icons right">Développeur Front-end</i>
+                    </button>
+                </div>
+            </div>
+            </div>
+            <!-- Section Contact -->
+            <div class="container">
+                <div class="row">
+                    <div class="col s12">
+                        <h2 class="center-align grey-text text-darken-2">Contact</h2>
+                    </div>
+            
+                    <!-- Formulaire de contact -->
+                    <div class="col s12">
+                        <form id="contact-form">
+                            <!-- Première Ligne : Nom et Prénom -->
+                            <div class="row">
+                                <div class="input-field col s12 m6"> <!-- Input de taille moyenne -->
+                                    <input id="lastname" type="text" class="validate" required>
+                                    <label for="lastname">Nom</label>
+                                </div>
+                                <div class="input-field col s12 m6"> <!-- Input de taille moyenne -->
+                                    <input id="firstname" type="text" class="validate" required>
+                                    <label for="firstname">Prénom</label>
+                                </div>
+                            </div>
+            
+                            <!-- Deuxième Ligne : Email -->
+                            <div class="row">
+                                <div class="input-field col s12"> <!-- Input pleine largeur -->
+                                    <input id="email" type="email" class="validate" required>
+                                    <label for="email">Email</label>
+                                </div>
+                            </div>
+            
+                            <!-- Troisième Ligne : Message -->
+                            <div class="row">
+                                <div class="input-field col s12"> <!-- Texte pleine largeur -->
+                                    <textarea id="message" class="materialize-textarea" required></textarea>
+                                    <label for="message">Votre message</label>
+                                    <small>Suggestions : "Je voudrais plus d'informations sur..." ou "J'ai rencontré un problème avec..."</small>
+                                </div>
+                            </div>
+            
+                            <!-- Case à cocher pour copie -->
+                            <p>
+                                <label>
+                                    <input type="checkbox" id="copy" />
+                                    <span>Recevoir une copie du message</span>
+                                </label>
+                            </p>
+                            <div id="copy-email-field" style="display:none;">
+                                <div class="input-field col s12">
+                                    <input id="copy-email" type="email" class="validate">
+                                    <label for="copy-email">Votre email</label>
+                                </div>
+                            </div>
+            
+                            <!-- Bouton de soumission avec loader -->
+                            <div class="row center-align">
+                                <button class="btn waves-effect waves-light" type="submit" id="submit-btn">
+                                    <i class="material-icons right">send</i>
+                                </button>
+                                <div class="preloader-wrapper small active" id="loading-spinner" style="display:none;">
+                                    <div class="spinner-layer spinner-blue-only">
+                                        <div class="circle-clipper left">
+                                            <div class="circle"></div>
+                                        </div><div class="gap-patch">
+                                            <div class="circle"></div>
+                                        </div><div class="circle-clipper right">
+                                            <div class="circle"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Code JavaScript -->
+            <script>
+                // Validation du champ email en temps réel
+                document.getElementById('email').addEventListener('input', function() {
+                    const emailField = this;
+                    // regex pour autoriser les chiffres et les points dans l'email
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailPattern.test(emailField.value)) {
+                        emailField.classList.add('invalid'); // Ajoute la classe 'invalid' si l'email est incorrect
+                        emailField.setCustomValidity('Entrez une adresse email valide.');
+                    } else {
+                        emailField.classList.remove('invalid'); // Supprime la classe 'invalid' si l'email est correct
+                        emailField.setCustomValidity(''); // Enlève le message d'erreur
+                    }
+                });
+            
+                // Afficher/masquer le champ email de copie en fonction de la case à cocher
+                document.getElementById('copy').addEventListener('change', function() {
+                    document.getElementById('copy-email-field').style.display = this.checked ? 'block' : 'none';
+                });
+            
+                // Gestion de l'envoi du formulaire avec AJAX
+                document.getElementById('contact-form').addEventListener('submit', function(e) {
+                    e.preventDefault(); // Empêche le formulaire de recharger la page
+                    
+                    // Affiche l'animation de chargement
+                    document.getElementById('loading-spinner').style.display = 'inline-block';
+                    document.getElementById('submit-btn').disabled = true; // Désactive le bouton de soumission pendant le processus
+            
+                    const formData = new FormData(this); // Récupère les données du formulaire
+            
+                    // Simule une requête AJAX 
+                    setTimeout(() => {
+                        document.getElementById('loading-spinner').style.display = 'none'; // Cache le spinner
+                        document.getElementById('submit-btn').disabled = false; // Réactive le bouton de soumission
+            
+                        // Affiche un message de succès pour la démonstration
+                        M.toast({html: 'Message envoyé avec succès!', classes: 'rounded'});
+            
+                        // Optionnellement, réinitialise le formulaire
+                        document.getElementById('contact-form').reset();
+                        document.getElementById('copy-email-field').style.display = 'none'; // Masque le champ d'email de copie
+                    }, 2000);
+                });
+            </script>
+            
+<!-- Pied de page -->
+<footer class="page-footer teal lighten-1" style="width: 100%; padding: 20px 0;">
+    <div class="container">
+        <div class="row">
+            <!-- Infos Contact -->
+            <div class="col l6 s12">
+                <h5 class="white-text">Me Contacter</h5>
+                <p class="grey-text text-lighten-4">Vous pouvez me joindre via les moyens suivants :</p>
+                <ul>
+                    <li>Email : <a href="mailto:your-email@example.com" class="white-text">ababacar.ndiaye0428@gmail.com</a></li>
+                    <li>Téléphone : <a href="tel:+1234567890" class="white-text">+33 0626809385</li>
+                </ul>
+            </div>
+
+            <!-- Liens Réseaux Sociaux -->
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Suivez-moi</h5>
+                <ul>
+                    <li>
+                        <a href="https://x.com/fn_babs" target="_blank" class="white-text">
+                            <i class="material-icons">twitter</i> Twitter
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/babsnd28/" target="_blank" class="white-text">
+                            <i class="material-icons">instagram</i> Instagram
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-copyright">
+        <div class="container center-align">
+            © 2024 Ababacar Ndiaye. Tous droits réservés.
+        </div>
+    </div>
+</footer>
+<style>
+    body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    main {
+        flex: 1 0 auto;
+    }
+
+    footer {
+        width: 100%;
+        position: relative;
+        bottom: 0;
+    }
+
+    .page-footer {
+        background-color: #26a69a; 
+        padding: 20px 0; 
+    }
+
+    .footer-copyright {
+        background-color: #00796b; 
+        padding: 10px 0;
+        color: white;
+    }
+</style>
+
+</body>
+</html>
