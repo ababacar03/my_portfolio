@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Materialize CSS CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Materialize JS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body class="grey lighten-4">
+    <!-- Navbar -->
+    <nav class="teal lighten-1">
+        <div class="nav-wrapper container">
+            <a href="index.html" class="brand-logo">Ababacar Ndiaye</a>
+            <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="last_projects.html">Projets</a></li>
+                <li><a href="about_me.html">À propos de moi</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Menu Mobile -->
+    <ul class="sidenav white-text teal lighten-1" id="mobile-menu">
+        <li><a class="white-text" href="index.html">Accueil</a></li>
+        <li><a class="white-text" href="last_projects.html">Projets</a></li>
+        <li><a class="white-text" href="about_me.html">À propos de moi</a></li>
+    </ul>
+    <script>
+        $(document).ready(function(){
+            // Initialiser le menu pour mobile
+            $('.sidenav').sidenav();
+        });
+    </script>
+           <div class="container">
+            <div class="col s12 m4">
+                <h3 class="grey-text text-darken-2 center-align">Compétences</h3>
+                <table class="highlight">
+                    <thead>
+                        <tr>
+                            <th>Compétence</th> 
+                            <th>Description</th>
+                            <th>Icônes</th> 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HTML</td>
+                            <td>Construire la structure des sites web.</td>
+                            <td><img src="images/html-5.png" alt="Icône HTML" width="50"></td>
+                        </tr>
+                        <tr class="grey lighten-3">
+                            <td>CSS</td>
+                            <td>Styliser les pages web avec un design moderne.</td>
+                            <td><img src="images/css-3.png" alt="Icône CSS" width="50"></td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript et ses frameworks (React/NodeJS)</td>
+                            <td>Rendre les sites interactifs et dynamiques.</td>
+                            <td><img src="images/script-java.png" alt="Icône JavaScript" width="50"></td>
+                        </tr>
+                        <tr class="grey lighten-3">
+                            <td>Python</td>
+                            <td>Développement back-end et front-end.</td>
+                            <td><img src="images/python.png" alt="Icône Python" width="50"></td>
+                        </tr>
+                        <tr>
+                            <td>MySQL</td>
+                            <td>Développement back-end et scripts d'automatisation.</td>
+                            <td><img src="images/mysql.png" alt="Icône MySQL" width="50"></td>
+                        </tr>
+                        <tr>
+                            <td>Java</td>
+                            <td>Développement d'applications.</td>
+                            <td><img src="images/java.png" alt="Icône Java" width="50"></td>
+                        </tr>
+                        <tr class="grey lighten-3">
+                            <td>MongoDB</td>
+                            <td>Développement back-end et scripts d'automatisation.</td>
+                            <td><img src="images/free-mongodb-logo-icon-download-in-svg-png-gif-file-formats--wordmark-programming-langugae-freebies-pack-logos-icons-1175140.webp" alt="Icône MongoDB" width="50"></td>
+                        </tr>
+                        <tr>
+                            <td>PowerShell</td>
+                            <td>Scripts pour l'administration système.</td>
+                            <td><img src="images/icons8-powershell-48.png" alt="Icône PowerShell" width="50"></td>
+                        </tr>
+                        <tr>
+                            <td>C/C++</td>
+                            <td>Développement d'applications.</td>
+                            <td><img src="images/icons8-c-48.png" alt="Icône C++" width="50"></td>
+                        </tr>
+                        <tr class="grey lighten-3">
+                            <td>Bootstrap</td>
+                            <td>Rendre les sites web responsifs.</td>
+                            <td><img src="images/icons8-bootstrap-48.png" alt="Icône Bootstrap" width="50"></td>
+                        </tr>
+                        <tr class="grey lighten-3">
+                            <td>GitHub</td>
+                            <td>Organisation des projets.</td>
+                            <td><img src="images/icons8-github-30.png" alt="Icône GitHub" width="50"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+            <div class="container">
+            
+                <div class="col s12 m4">
+                    <h3 class="grey-text text-darken-2 center-align">Formations</h3>
+                    <table class="highlight">
+                        <thead>
+                            <tr>
+                                <th>années</th>
+                                <th>Ecole/description</th>
+                                <th>Icônes</th> 
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2024-en cours</td>
+                                <td><B>EPITECH-LILLE</B> 3eme année pré-MSC</td>
+                                <td><img src="images/Epitech.png" alt="HTML Icon" width="50"></td>
+                            </tr>
+                            <tr class="grey lighten-3">
+                                <td>2023-2024</td>
+                                <td><B>JUNIA-ISEN</B> 3eme année CIR3(cycle informatique et réseaux)</td>
+                                <td><img src="images/junia_ingnieurs_cover.jpeg" alt="HTML Icon" width="50"></td>
+                            </tr>
+                            <tr>
+                                <td>2022-2023</td>
+                                <td><B>BEM TECH</B> 2eme année classe prépa intégrée</td>
+                                <td><img src="images/logo-BEMTECH-VF.png" alt="HTML Icon" width="50"></td>
+                            </tr>
+                            <tr class="grey lighten-3">
+                            <td>2021-2022</td>
+                                <td><B>BEM TECH</B> 2eme année classe prépa intégrée</td>
+                                <td><img src="images/logo-BEMTECH-VF.png" alt="HTML Icon" width="50"></td>
+                            </tr>
+                            <tr>
+                                <td>2020-2021</td>
+                                <td><B>Cabis-School</B> Baccalauréat S</td>
+                                <td><img src="images/cabis_school.jpg" alt="HTML Icon" width="50"></td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container">
+                <div class="col s12 m4">
+                    <h3 class="grey-text text-darken-2 center-align">Centres d'intérêts</h3>
+                    <table class="highlight">
+                        <thead>
+                            <tr>
+                                <th>Centres d'intérêts</th>
+                                <th>Icônes</th> 
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>jeux vidéos</td>
+                                <td><img src="images/jeux.png" alt="HTML Icon" width="50"></td>
+                            </tr>
+                            <tr class="grey lighten-3">
+                                <td>Football</td>
+                                <td><img src="images/variante-de-ballon-de-football.png" alt="HTML Icon" width="50"></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="container">
+                <h3 class="grey-text text-darken-2 center-align">langages</h3>
+                <h5>niveau anglais</h5>
+                <div class="progress">
+                    <div class="determinate" style="width: 75%"></div> 
+                </div>
+                <h5>niveau français</h5>
+                <div class="progress">
+                    <div class="determinate" style="width: 100%"></div> 
+                </div>
+
+            </div>
+            
+<!-- Footer -->
+<footer class="page-footer teal lighten-1" style="width: 100%; padding: 20px 0;">
+    <div class="container">
+        <div class="row">
+            <!-- Informations de contact -->
+            <div class="col l6 s12">
+                <h5 class="white-text">Me Contacter</h5>
+                <p class="grey-text text-lighten-4">Vous pouvez me joindre via :</p>
+                <ul>
+                    <li>Email : <a href="mailto:ababacar.ndiaye0428@gmail.com" class="white-text">ababacar.ndiaye0428@gmail.com</a></li>
+                    <li>Téléphone : <a href="tel:+33626809385" class="white-text">+33 0626809385</a></li>
+                </ul>
+            </div>
+
+            <!-- Liens vers les réseaux sociaux -->
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Suivez-moi</h5>
+                <ul>
+                    <li>
+                        <a href="https://x.com/fn_babs" target="_blank" class="white-text">
+                            <i class="material-icons">twitter</i> Twitter
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/babsnd28/" target="_blank" class="white-text">
+                            <i class="material-icons">instagram</i> Instagram
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-copyright">
+        <div class="container center-align">
+            © 2024 Ababacar Ndiaye. Tous droits réservés.
+        </div>
+    </div>
+</footer>
+<style>
+    body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    main {
+        flex: 1 0 auto;
+    }
+
+    footer {
+        margin-top: 20px;
+        width: 100%;
+        position: relative;
+        bottom: 0;
+    }
+
+    .page-footer {
+        background-color: #26a69a; 
+        padding: 20px 0; 
+    }
+
+    .footer-copyright {
+        background-color: #00796b; 
+        padding: 10px 0;
+        color: white;
+    }
+</style>
+    
+</body>
+</html>
