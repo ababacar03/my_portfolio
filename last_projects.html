@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Materialize CSS CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Materialize JS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body class="grey lighten-4">
+    <!-- Navbar -->
+    <nav class="teal lighten-1">
+        <div class="nav-wrapper container">
+            <a href="index.html" class="brand-logo">Ababacar Ndiaye</a>
+            <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="last_projects.html">Projets</a></li>
+                <li><a href="about_me.html">À propos de moi</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Menu Mobile -->
+    <ul class="sidenav white-text teal lighten-1" id="mobile-menu">
+        <li><a class="white-text" href="index.html">Accueil</a></li>
+        <li><a class="white-text" href="last_projects.html">Projets</a></li>
+        <li><a class="white-text" href="about_me.html">À propos de moi</a></li>
+    </ul>
+    <script>
+        $(document).ready(function(){
+            // Initialiser le menu pour mobile
+            $('.sidenav').sidenav();
+        });
+    </script>
+    
+    <!-- Section Derniers Projets -->
+    <div class="container">
+        <!-- Première ligne de projets -->
+        <div class="row">
+            <div class="col s12">
+                <h2 class="center-align grey-text text-darken-2">Derniers Projets</h2>
+            </div>
+    
+            <div class="col s12 m4">
+                <h3>Premier projet</h3>
+                <p>Création d'une application nommée FABLAB permettant d'emprunter des objets dans le laboratoire de l'école. Utilisation de React pour le front-end et MongoDB pour le back-end.</p>
+                <img src="images/FABLAB.png" alt="Portfolio 1" class="responsive-img">
+            </div>
+    
+            <div class="col s12 m4">
+                <h3>Deuxième projet</h3>
+                <p>Création d'un site de vente de chaussures avec des amis du Sénégal. Nous avons utilisé PHP pour tout ce qui est lié à la base de données, et HTML, PHP, JavaScript, Bootstrap et CSS pour le front-end.</p>
+                <video autoplay muted loop class="responsive-video">
+                    <source src="videos/WhatsApp Video 2024-09-27 at 14.27.10.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la balise vidéo.
+                </video>
+            </div>
+    
+            <div class="col s12 m4">
+                <h3>Troisième projet</h3>
+                <p>Création d'un annuaire pour une société sénégalaise appelée Lafricamobile. Pour ce projet, nous avons utilisé PHP pour le front-end et le back-end, avec MySQL.</p>
+                <img src="images/Africalam-3-jpg-696x348.jpg" alt="Portfolio 1" class="responsive-img">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Vidéos de quelques projets robotiques -->
+    <style>
+        .carousel-item video {
+            width: auto;
+            height: 500px;
+        }
+    </style>
+
+<body class="grey lighten-4">
+
+    <!-- Section Carousel animation (: -->
+    <div class="container">
+        <h2 class="center-align grey-text text-darken-2">Quelques vidéos de projets robotiques réalisés</h2>
+        <p>Le projet consistait à programmer les robots ABB, Kuka et Robotino. Pour le robot ABB, nous devions lui faire prendre des pièces qu'il devait ensuite placer dans un chariot. Pour le robot Kuka, nous devions lui faire prendre des pièces qu'il devait assembler, puis les placer dans un chariot. Enfin, pour Robotino, nous devions le programmer pour qu'il suive une ligne noire tracée pour lui, grâce à sa caméra ou son capteur.</p>
+        <div class="carousel carousel-slider center">
+            <div class="carousel-item">
+                <video autoplay muted loop >
+                    <source src="videos/WhatsApp Video 2024-09-26 at 11.16.43.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la balise vidéo.
+                </video>
+            </div>
+            <div class="carousel-item">
+                <video autoplay muted loop >
+                    <source src="videos/WhatsApp Video 2024-09-26 at 11.17.11.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la balise vidéo.
+                </video>
+            </div>
+            <div class="carousel-item">
+                <video autoplay muted loop >
+                    <source src="videos/WhatsApp Video 2024-09-26 at 12.33.39.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la balise vidéo.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            // Initialiser le carousel
+            $('.carousel.carousel-slider').carousel({
+                fullWidth: true,
+                indicators: true
+            });
+
+            // Faire défiler automatiquement toutes les 5 secondes
+            setInterval(function(){
+                $('.carousel').carousel('next');
+            }, 5000);
+        });
+    </script>
+
+<!-- Footer -->
+<footer class="page-footer teal lighten-1" style="width: 100%; padding: 20px 0;">
+    <div class="container">
+        <div class="row">
+            <!-- Informations de contact -->
+            <div class="col l6 s12">
+                <h5 class="white-text">Me Contacter</h5>
+                <p class="grey-text text-lighten-4">Vous pouvez me joindre via :</p>
+                <ul>
+                    <li>Email : <a href="mailto:ababacar.ndiaye0428@gmail.com" class="white-text">ababacar.ndiaye0428@gmail.com</a></li>
+                    <li>Téléphone : <a href="tel:+33626809385" class="white-text">+33 0626809385</a></li>
+                </ul>
+            </div>
+
+            <!-- Liens vers les réseaux sociaux -->
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Suivez-moi</h5>
+                <ul>
+                    <li>
+                        <a href="https://x.com/fn_babs" target="_blank" class="white-text">
+                            <i class="material-icons">twitter</i> Twitter
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/babsnd28/" target="_blank" class="white-text">
+                            <i class="material-icons">instagram</i> Instagram
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-copyright">
+        <div class="container center-align">
+            © 2024 Ababacar Ndiaye. Tous droits réservés.
+        </div>
+    </div>
+</footer>
+<style>
+    body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    main {
+        flex: 1 0 auto;
+    }
+
+    footer {
+        margin-top: 20px;
+        width: 100%;
+        position: relative;
+        bottom: 0;
+    }
+
+    .page-footer {
+        background-color: #26a69a; 
+        padding: 20px 0; 
+    }
+
+    .footer-copyright {
+        background-color: #00796b; 
+        padding: 10px 0;
+        color: white;
+    }
+</style>
+    
+</body>
+</html>
