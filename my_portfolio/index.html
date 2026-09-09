@@ -536,153 +536,137 @@
 
     <section class="contact-section">
 
-        <div class="container">
+      <div class="container">
 
-            <h2 class="center-align grey-text text-darken-2 contact-title">
-                Contact
-            </h2>
+    <h2 class="center-align grey-text text-darken-2 contact-title">
+        Contact
+    </h2>
 
-            <form id="contact-form">
+    <form
+        action="https://formsubmit.co/ababacar.ndiaye0428@gmail.com"
+        method="POST"
+        id="contact-form"
+    >
 
-                <!-- Nom + prénom -->
-                <div class="row">
+        <!-- Nom + prénom -->
+        <div class="row">
 
-                    <div class="input-field col s12 m6">
-                        <input
-                            id="lastname"
-                            type="text"
-                            class="validate"
-                            required
-                        >
-
-                        <label for="lastname">
-                            Nom
-                        </label>
-                    </div>
-
-
-                    <div class="input-field col s12 m6">
-                        <input
-                            id="firstname"
-                            type="text"
-                            class="validate"
-                            required
-                        >
-
-                        <label for="firstname">
-                            Prénom
-                        </label>
-                    </div>
-
-                </div>
-
-
-                <!-- Email -->
-                <div class="row">
-
-                    <div class="input-field col s12">
-
-                        <input
-                            id="email"
-                            type="email"
-                            class="validate"
-                            required
-                        >
-
-                        <label for="email">
-                            Email
-                        </label>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Message -->
-                <div class="row">
-
-                    <div class="input-field col s12">
-
-                        <textarea
-                            id="message"
-                            class="materialize-textarea"
-                            required
-                        ></textarea>
-
-                        <label for="message">
-                            Votre message
-                        </label>
-
-                        <small>
-                            Suggestions : "Je voudrais plus
-                            d'informations sur..." ou
-                            "J'ai rencontré un problème avec..."
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Copie du message -->
-                <div class="row">
-
-                    <div class="col s12 copy-email-container">
-
-                        <label>
-                            <input
-                                type="checkbox"
-                                id="copy"
-                            >
-
-                            <span>
-                                Recevoir une copie du message
-                            </span>
-                        </label>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Email de copie -->
-                <div
-                    id="copy-email-field"
-                    class="row"
-                    style="display: none;"
+            <div class="input-field col s12 m6">
+                <input
+                    id="lastname"
+                    name="Nom"
+                    type="text"
+                    class="validate"
+                    required
                 >
 
-                    <div class="input-field col s12">
-
-                        <input
-                            id="copy-email"
-                            type="email"
-                            class="validate"
-                        >
-
-                        <label for="copy-email">
-                            Votre email
-                        </label>
-
-                    </div>
-
-                </div>
+                <label for="lastname">
+                    Nom
+                </label>
+            </div>
 
 
-                <!-- Bouton -->
-                <div class="row center-align submit-container">
+            <div class="input-field col s12 m6">
+                <input
+                    id="firstname"
+                    name="Prénom"
+                    type="text"
+                    class="validate"
+                    required
+                >
 
-                    <button
-                        class="btn waves-effect waves-light"
-                        type="submit"
-                        id="submit-btn"
-                    >
-                        Envoyer
-                        <i class="material-icons right">
-                            send
-                        </i>
-                    </button>
+                <label for="firstname">
+                    Prénom
+                </label>
+            </div>
 
+        </div>
+
+
+        <!-- Email -->
+        <div class="row">
+
+            <div class="input-field col s12">
+
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    class="validate"
+                    required
+                >
+
+                <label for="email">
+                    Email
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- Message -->
+        <div class="row">
+
+            <div class="input-field col s12">
+
+                <textarea
+                    id="message"
+                    name="message"
+                    class="materialize-textarea"
+                    required
+                ></textarea>
+
+                <label for="message">
+                    Votre message
+                </label>
+
+                <small>
+                    Suggestions : "Je voudrais plus
+                    d'informations sur..." ou
+                    "J'ai rencontré un problème avec..."
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- Options FormSubmit -->
+        <input
+            type="hidden"
+            name="_subject"
+            value="Nouveau message depuis mon portfolio"
+        >
+
+        <input
+            type="hidden"
+            name="_captcha"
+            value="false"
+        >
+
+
+        <!-- Bouton -->
+        <div class="row center-align submit-container">
+
+            <button
+                class="btn waves-effect waves-light"
+                type="submit"
+                id="submit-btn"
+            >
+                Envoyer
+
+                <i class="material-icons right">
+                    send
+                </i>
+
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
 
                     <!-- Loader -->
                     <div
@@ -836,126 +820,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 
-<script>
 
-    /* ==============================
-       INITIALISATION DU MENU MOBILE
-    ============================== */
-
-    document.addEventListener('DOMContentLoaded', function () {
-
-        const sidenavs = document.querySelectorAll('.sidenav');
-
-        M.Sidenav.init(sidenavs);
-
-    });
-
-
-    /* ==============================
-       VALIDATION EMAIL
-    ============================== */
-
-    const emailField = document.getElementById('email');
-
-    emailField.addEventListener('input', function () {
-
-        const emailPattern =
-            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (!emailPattern.test(emailField.value)) {
-
-            emailField.classList.add('invalid');
-
-            emailField.setCustomValidity(
-                'Entrez une adresse email valide.'
-            );
-
-        } else {
-
-            emailField.classList.remove('invalid');
-
-            emailField.setCustomValidity('');
-
-        }
-
-    });
-
-
-    /* ==============================
-       EMAIL DE COPIE
-    ============================== */
-
-    const copyCheckbox =
-        document.getElementById('copy');
-
-    const copyEmailField =
-        document.getElementById('copy-email-field');
-
-
-    copyCheckbox.addEventListener('change', function () {
-
-        if (this.checked) {
-
-            copyEmailField.style.display = 'block';
-
-        } else {
-
-            copyEmailField.style.display = 'none';
-
-        }
-
-    });
-
-
-    /* ==============================
-       FORMULAIRE
-    ============================== */
-
-    const contactForm =
-        document.getElementById('contact-form');
-
-    const loadingSpinner =
-        document.getElementById('loading-spinner');
-
-    const submitButton =
-        document.getElementById('submit-btn');
-
-
-    contactForm.addEventListener('submit', function (event) {
-
-        event.preventDefault();
-
-        loadingSpinner.style.display = 'inline-block';
-
-        submitButton.disabled = true;
-
-
-        /*
-         * Simulation de l'envoi AJAX.
-         * À remplacer par ton véritable backend
-         * lorsque tu connecteras le formulaire.
-         */
-
-        setTimeout(function () {
-
-            loadingSpinner.style.display = 'none';
-
-            submitButton.disabled = false;
-
-            M.toast({
-                html: 'Message envoyé avec succès !',
-                classes: 'rounded'
-            });
-
-            contactForm.reset();
-
-            copyEmailField.style.display = 'none';
-
-        }, 2000);
-
-    });
-
-</script>
 
 </body>
 </html>
