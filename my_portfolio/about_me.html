@@ -21,9 +21,35 @@
 
     <style>
 
-        /* ==============================
+        /* ==================================================
+           VARIABLES
+        ================================================== */
+
+        :root {
+            --bg-dark: #070b18;
+            --bg-dark-2: #0d1224;
+
+            --card: #11182b;
+            --card-hover: #151e36;
+
+            --purple: #8b5cf6;
+            --purple-dark: #6d28d9;
+
+            --pink: #ec4899;
+            --blue: #3b82f6;
+            --cyan: #06b6d4;
+
+            --text: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --muted: #94a3b8;
+
+            --border: rgba(139, 92, 246, 0.25);
+        }
+
+
+        /* ==================================================
            GLOBAL
-        ============================== */
+        ================================================== */
 
         html {
             scroll-behavior: smooth;
@@ -34,7 +60,27 @@
             min-height: 100vh;
             flex-direction: column;
             margin: 0;
+
             overflow-x: hidden;
+
+            color: var(--text);
+
+            background:
+                radial-gradient(
+                    circle at top left,
+                    rgba(139, 92, 246, 0.12),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at top right,
+                    rgba(6, 182, 212, 0.08),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    180deg,
+                    var(--bg-dark),
+                    var(--bg-dark-2)
+                );
         }
 
         main {
@@ -47,157 +93,531 @@
         }
 
 
-        /* ==============================
+ /* =====================================================
            NAVBAR
-        ============================== */
+        ====================================================== */
 
         nav {
-            box-shadow: none;
+
+            height: 70px;
+
+            line-height: 70px;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #080b18,
+                    #11152b,
+                    #16102e
+                ) !important;
+
+            box-shadow:
+
+                0 4px 25px rgba(0, 0, 0, 0.45);
+
+            border-bottom:
+
+                1px solid rgba(139, 92, 246, 0.20);
         }
+
+
+        .nav-wrapper {
+
+            height: 70px;
+        }
+
 
         .brand-logo {
-            font-size: 1.5rem !important;
+
+            font-size: 1.45rem !important;
+
+            font-weight: 700;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #a78bfa,
+                    #22d3ee
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            background-clip: text;
         }
+
+
+        nav ul li a {
+
+            color: #e2e8f0;
+
+            font-weight: 500;
+
+            transition: all 0.3s ease;
+        }
+
+
+        nav ul li a:hover {
+
+            color: #a78bfa;
+
+            background:
+
+                rgba(139, 92, 246, 0.08);
+        }
+
+
+        .sidenav-trigger i {
+
+            color: white;
+        }
+
 
         .sidenav {
+
             width: 280px;
+
+            background:
+
+                linear-gradient(
+                    180deg,
+                    #0b1020,
+                    #130d28
+                );
         }
+
 
         .sidenav li a {
+
             color: white !important;
+
             font-size: 1.1rem;
+
+            transition: 0.3s;
         }
 
 
-        /* ==============================
-           SECTIONS
-        ============================== */
+        .sidenav li a:hover {
 
-        .page-section {
-            padding: 45px 0;
+            background:
+
+                rgba(139, 92, 246, 0.15);
+
+            color: #a78bfa !important;
         }
 
-        .section-title {
-            font-size: 2.2rem;
+
+
+        /* ==================================================
+           EXPERIENCE
+        ================================================== */
+
+        .experience-card {
+            height: 100%;
+            padding: 30px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(17, 24, 43, 0.95),
+                    rgba(13, 18, 36, 0.95)
+                );
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.30);
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-6px);
+
+            border-color:
+                rgba(139, 92, 246, 0.55);
+
+            box-shadow:
+                0 20px 50px rgba(139, 92, 246, 0.18);
+        }
+
+        .experience-title {
+            color: var(--text);
+
+            font-size: 1.5rem;
+            font-weight: 700;
+
             margin-top: 0;
-            margin-bottom: 30px;
         }
 
+        .experience-date {
+            color: var(--cyan);
 
-        /* ==============================
-           TABLEAUX
-        ============================== */
+            font-weight: 600;
 
-        .table-container {
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
             margin-bottom: 20px;
         }
 
-        table {
+        .experience-role {
+            color: var(--purple);
+
+            font-weight: 600;
+        }
+
+        .experience-description {
+            color: var(--text-secondary);
+
+            line-height: 1.8;
+
+            text-align: justify;
+        }
+
+        .experience-image {
             width: 100%;
-            min-width: 600px;
-        }
+            max-height: 130px;
 
-        th {
-            white-space: nowrap;
-        }
+            object-fit: contain;
 
-        td {
-            vertical-align: middle;
-        }
+            background: white;
 
-        td img {
-            width: 50px;
-            max-width: 50px;
-            height: auto;
-            display: block;
-            margin: auto;
+            padding: 15px;
+
+            border-radius: 12px;
+
+            margin-bottom: 20px;
         }
 
 
-        /* ==============================
+        /* ==================================================
            COMPÉTENCES
-        ============================== */
+        ================================================== */
 
-        .skills-section {
-            padding-top: 45px;
+        .skills-table {
+            overflow: hidden;
+
+            background:
+                rgba(17, 24, 43, 0.95);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .skills-table table {
+            margin: 0;
+        }
+
+        .skills-table th {
+            color: var(--text);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(139, 92, 246, 0.25),
+                    rgba(6, 182, 212, 0.12)
+                );
+        }
+
+        .skills-table td {
+            color: var(--text-secondary);
+
+            border-bottom:
+                1px solid rgba(139, 92, 246, 0.12);
+        }
+
+        .skills-table tr:hover {
+            background:
+                rgba(139, 92, 246, 0.08);
+        }
+
+        .skill-icon {
+            width: 48px;
+            height: 48px;
+
+            object-fit: contain;
+
+            background: white;
+
+            padding: 5px;
+
+            border-radius: 8px;
         }
 
 
-        /* ==============================
-           FORMATIONS
-        ============================== */
+        /* ==================================================
+           FORMATION
+        ================================================== */
 
-        .education-section {
-            padding-top: 20px;
+        .education-table {
+            overflow: hidden;
+
+            background:
+                rgba(17, 24, 43, 0.95);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .education-table table {
+            margin: 0;
+        }
+
+        .education-table th {
+            color: var(--text);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(139, 92, 246, 0.25),
+                    rgba(6, 182, 212, 0.12)
+                );
+        }
+
+        .education-table td {
+            color: var(--text-secondary);
+
+            border-bottom:
+                1px solid rgba(139, 92, 246, 0.12);
+        }
+
+        .education-table tr:hover {
+            background:
+                rgba(139, 92, 246, 0.08);
+        }
+
+        .education-logo {
+            width: 75px;
+            height: 60px;
+
+            object-fit: contain;
+
+            background: white;
+
+            padding: 5px;
+
+            border-radius: 8px;
         }
 
 
-        /* ==============================
-           CENTRES D'INTÉRÊTS
-        ============================== */
+        /* ==================================================
+           CENTRES D'INTÉRÊT
+        ================================================== */
 
-        .interests-section {
-            padding-top: 20px;
+        .interest-card {
+            height: 100%;
+
+            padding: 25px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(17, 24, 43, 0.95),
+                    rgba(13, 18, 36, 0.95)
+                );
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 18px;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .interest-card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 15px 40px rgba(139, 92, 246, 0.18);
+        }
+
+        .interest-image {
+            width: 140px;
+            height: 140px;
+
+            object-fit: contain;
+
+            margin-bottom: 15px;
+        }
+
+        .interest-title {
+            color: var(--text);
+
+            font-size: 1.3rem;
+            font-weight: 600;
         }
 
 
-        /* ==============================
+        /* ==================================================
            LANGUES
-        ============================== */
+        ================================================== */
 
-        .languages-section {
-            padding-top: 20px;
-            padding-bottom: 60px;
+        .language-card {
+            padding: 25px;
+
+            background:
+                rgba(17, 24, 43, 0.95);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 18px;
+
+            margin-bottom: 20px;
         }
 
-        .language-title {
-            margin-top: 25px;
+        .language-name {
+            color: var(--text);
+
+            font-weight: 600;
+
             margin-bottom: 10px;
         }
 
-        .progress {
-            height: 12px;
-            border-radius: 10px;
+        .language-percentage {
+            float: right;
+
+            color: var(--cyan);
         }
 
-        .determinate {
+        .language-progress {
+            height: 10px;
+
+            background:
+                rgba(148, 163, 184, 0.15);
+
             border-radius: 10px;
+
+            overflow: hidden;
+
+            margin: 0;
+        }
+
+        .language-progress .determinate {
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--purple),
+                    var(--pink),
+                    var(--cyan)
+                );
         }
 
 
-        /* ==============================
+ /* =====================================================
            FOOTER
-        ============================== */
+        ====================================================== */
 
         .page-footer {
-            background-color: #26a69a;
-            padding-top: 30px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #080b18,
+                    #11152b,
+                    #160d2c
+                ) !important;
+
+            padding-top: 40px;
+
+            border-top:
+
+                1px solid rgba(139, 92, 246, 0.20);
         }
+
 
         .footer-content {
-            padding-bottom: 15px;
+
+            padding-bottom: 20px;
         }
+
+
+        .page-footer h5 {
+
+            font-weight: 700;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #a78bfa
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            background-clip: text;
+        }
+
+
+        .page-footer p,
+        .page-footer li {
+
+            color: #94a3b8 !important;
+        }
+
 
         .footer-links li {
-            margin-bottom: 8px;
+
+            margin-bottom: 12px;
         }
+
 
         .footer-links a {
-            word-break: break-word;
+
+            color: #c4b5fd !important;
+
+            transition: 0.3s;
         }
+
+
+        .footer-links a:hover {
+
+            color: #22d3ee !important;
+        }
+
 
         .footer-copyright {
-            background-color: #00796b;
-            padding: 12px 0;
+
+            background:
+
+                rgba(0, 0, 0, 0.30) !important;
+
+            padding: 15px 0;
+
+            border-top:
+
+                1px solid rgba(139, 92, 246, 0.10);
         }
 
-
-        /* ==============================
+        /* ==================================================
            TABLETTE
-        ============================== */
+        ================================================== */
 
         @media only screen and (max-width: 992px) {
 
@@ -212,9 +632,9 @@
         }
 
 
-        /* ==============================
+        /* ==================================================
            MOBILE
-        ============================== */
+        ================================================== */
 
         @media only screen and (max-width: 600px) {
 
@@ -227,48 +647,39 @@
             }
 
             .page-section {
-                padding: 30px 0;
+                padding: 35px 0;
             }
 
             .section-title {
                 font-size: 1.8rem;
+
+                line-height: 1.3;
+
                 margin-bottom: 25px;
             }
 
-            /*
-             * Les tableaux restent suffisamment larges
-             * pour être lisibles.
-             *
-             * Ils peuvent être défilés horizontalement
-             * dans leur propre conteneur sans faire
-             * déborder toute la page.
-             */
-
-            .table-container {
-                border-radius: 4px;
+            .experience-card {
+                padding: 22px;
             }
 
-            table {
+            .experience-description {
+                text-align: left;
+
+                font-size: 0.95rem;
+            }
+
+            .skills-table,
+            .education-table {
+                overflow-x: auto;
+            }
+
+            .skills-table table,
+            .education-table table {
                 min-width: 600px;
-                font-size: 0.9rem;
             }
 
-            th,
-            td {
-                padding: 10px 8px;
-            }
-
-            td img {
-                width: 45px;
-                max-width: 45px;
-            }
-
-            .languages-section {
-                padding-bottom: 40px;
-            }
-
-            .language-title {
-                font-size: 1.2rem;
+            .interest-card {
+                margin-bottom: 20px;
             }
 
             .footer-content {
@@ -279,16 +690,12 @@
                 margin-top: 30px;
             }
 
-            .footer-copyright {
-                font-size: 0.85rem;
-            }
-
         }
 
 
-        /* ==============================
+        /* ==================================================
            TRÈS PETITS ÉCRANS
-        ============================== */
+        ================================================== */
 
         @media only screen and (max-width: 400px) {
 
@@ -300,249 +707,270 @@
                 font-size: 1.6rem;
             }
 
-            table {
-                font-size: 0.85rem;
-            }
-
         }
 
     </style>
+
 </head>
 
 
-<body class="grey lighten-4">
+<body>
 
 
-    <!-- ==============================
-         NAVBAR
-    ============================== -->
+   
+<nav>
 
-    <nav class="teal lighten-1">
-
-        <div class="nav-wrapper container">
-
-            <a
-                href="index.html"
-                class="brand-logo"
-            >
-                Ababacar Ndiaye
-            </a>
+    <div class="nav-wrapper container">
 
 
-            <!-- Menu mobile -->
+        <a
+            href="index.html"
+            class="brand-logo"
+        >
 
-            <a
-                href="#"
-                data-target="mobile-menu"
-                class="sidenav-trigger"
-            >
-                <i class="material-icons">menu</i>
-            </a>
+            Ababacar Ndiaye
 
-
-            <!-- Menu ordinateur -->
-
-            <ul class="right hide-on-med-and-down">
-
-                <li>
-                    <a href="index.html">
-                        Accueil
-                    </a>
-                </li>
-
-                <li>
-                    <a href="last_projects.html">
-                        Projets
-                    </a>
-                </li>
-
-                <li>
-                    <a href="about_me.html">
-                        À propos de moi
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
-    </nav>
+        </a>
 
 
-    <!-- ==============================
-         MENU MOBILE
-    ============================== -->
+        <!-- Menu mobile -->
 
-    <ul
-        class="sidenav teal lighten-1"
-        id="mobile-menu"
-    >
+        <a
+            href="#"
+            data-target="mobile-menu"
+            class="sidenav-trigger"
+        >
 
-        <li>
-            <a
-                href="index.html"
-                class="white-text"
-            >
-                Accueil
-            </a>
-        </li>
+            <i class="material-icons">
+                menu
+            </i>
 
-        <li>
-            <a
-                href="last_projects.html"
-                class="white-text"
-            >
-                Projets
-            </a>
-        </li>
-
-        <li>
-            <a
-                href="about_me.html"
-                class="white-text"
-            >
-                À propos de moi
-            </a>
-        </li>
-
-    </ul>
+        </a>
 
 
-    <!-- ==============================
-         CONTENU PRINCIPAL
-    ============================== -->
+        <!-- Menu ordinateur -->
+
+        <ul class="right hide-on-med-and-down">
+
+            <li>
+
+                <a href="index.html">
+                    Accueil
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="last_projects.html">
+                    Projets
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="about_me.html">
+                    À propos de moi
+                </a>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     MENU MOBILE
+====================================================== -->
+
+<ul
+    class="sidenav"
+    id="mobile-menu"
+>
+
+    <li>
+
+        <a href="index.html">
+
+            Accueil
+
+        </a>
+
+    </li>
+
+
+    <li>
+
+        <a href="last_projects.html">
+
+            Projets
+
+        </a>
+
+    </li>
+
+
+    <li>
+
+        <a href="about_me.html">
+
+            À propos de moi
+
+        </a>
+
+    </li>
+
+</ul>
+
+
+    <!-- ==================================================
+         CONTENU
+    ================================================== -->
 
     <main>
 
-        <!-- ==============================
-             EXPERIENCES PROFESSIONNELLES
-        ============================== -->
 
-        <section class="page-section education-section">
+        <!-- ==================================================
+             EXPÉRIENCES
+        ================================================== -->
+
+        <section class="page-section">
 
             <div class="container">
 
-                <h2 class="section-title center-align grey-text text-darken-2">
-                    Expériences professionnelles
+                <h2 class="center-align section-title">
+                    Mes expériences
                 </h2>
 
 
-                <div class="table-container">
-
-                    <table class="highlight responsive-table">
-
-                        <thead>
-
-                            <tr>
-
-                                <th>
-                                    Années
-                                </th>
-
-                                <th>
-                                    Employeur / Description
-                                </th>
-
-                                <th class="center-align">
-                                    Icône
-                                </th>
-
-                            </tr>
-
-                        </thead>
+                <div class="row">
 
 
-                        <tbody>
-                            <tr>
+                    <!-- KELI GROUP -->
 
-                                <td>
-                                   D'août 2022 à sept. 2022
-                                </td>
+                    <div class="col s12 m6">
 
-                                <td>
-                                    <strong>KELI GROUP</strong>
-                                    <br>
-                                    <strong>chargé de communication digitale</strong>
-                                    <br>
-                                    Gestion et mise à jour des annonces du site et refaire les réglages de certains problèmes liés à
-la base de données et aussi de la partie front-end.<br>
-<strong>Technologies utilisées:</strong> <strong>MYSQL</strong> pour la base de données et <strong>CSS</strong> et <strong>JavaScript</strong> pour le front.
-                                </td>
+                        <div class="experience-card">
 
-                                <td>
-                                    <img
-                                        src="images/Logo-Keli-Groupe-.png"
-                                        alt="Logo KELI GROUP"
-                                    >
-                                </td>
+                            <img
+                                src="images/Logo-Keli-Groupe-.png"
+                                alt="Logo KELI GROUP"
+                                class="experience-image"
+                            >
 
-                            </tr>
+                            <h3 class="experience-title">
+                                KELI GROUP
+                            </h3>
 
- <tr class="grey lighten-3">
+                            <p class="experience-date">
+                                Août 2022 – Septembre 2022
+                            </p>
 
-                                <td>
-                                   De mars 2022 à mai 2022 
-                                </td>
+                            <p class="experience-role">
+                                Chargé de communication digitale
+                            </p>
 
-                                <td>
-                                    <strong>Lafricamobile</strong>
-                                    <br>
-                                    <strong>Chef de projet web</strong>
-                                    <br>
-                                    Conception d'un annuaire permettant de retrouver toutes les informations de tous les
-travailleurs de l'entreprise(nom, prénom, mail etc.).<br>
-<strong>Technologies utilisées:</strong> <strong>HTML</strong> et <strong>CSS</strong> pour la partie front-end et <strong>MySQL</strong> et <strong>PHP</strong> pour la partie
-back-end.
-                                </td>
+                            <p class="experience-description">
 
-                                <td>
-                                    <img
-                                        src="images/LOGO-LAM-2021-1-4.png"
-                                        alt="Logo LAM"
-                                    >
-                                </td>
+                                Gestion des annonces du site internet,
+                                ainsi que des corrections liées à la base
+                                de données et au front-end.
 
-                            </tr>
-                        </tbody>
+                                <br><br>
 
-                    </table>
+                                Technologies utilisées :
+                                MySQL, CSS et JavaScript.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- LAFRICAMOBILE -->
+
+                    <div class="col s12 m6">
+
+                        <div class="experience-card">
+
+                            <img
+                                src="images/LOGO-LAM-2021-1-4.png"
+                                alt="Logo Lafricamobile"
+                                class="experience-image"
+                            >
+
+                            <h3 class="experience-title">
+                                Lafricamobile
+                            </h3>
+
+                            <p class="experience-date">
+                                Mars 2022 – Mai 2022
+                            </p>
+
+                            <p class="experience-role">
+                                Chef de projet web
+                            </p>
+
+                            <p class="experience-description">
+
+                                Création d'un annuaire permettant
+                                de référencer les employés de
+                                l'entreprise.
+
+                                <br><br>
+
+                                Front-end réalisé avec HTML et CSS,
+                                avec un back-end utilisant PHP
+                                et MySQL.
+
+                            </p>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
             </div>
 
         </section>
-        <!-- ==============================
-             COMPÉTENCES
-        ============================== -->
 
-        <section class="page-section skills-section">
+
+        <!-- ==================================================
+             COMPÉTENCES
+        ================================================== -->
+
+        <section class="page-section">
 
             <div class="container">
 
-                <h2 class="section-title center-align grey-text text-darken-2">
-                    Compétences
+                <h2 class="center-align section-title">
+                    Mes compétences
                 </h2>
 
 
-                <div class="table-container">
+                <div class="skills-table">
 
-                    <table class="highlight responsive-table">
+                    <table class="highlight centered">
 
                         <thead>
 
                             <tr>
 
                                 <th>
-                                    Compétence
+                                    Technologie
                                 </th>
 
                                 <th>
-                                    Description
-                                </th>
-
-                                <th class="center-align">
-                                    Icône
+                                    Domaine
                                 </th>
 
                             </tr>
@@ -551,96 +979,106 @@ back-end.
 
 
                         <tbody>
-                               
-                            <tr class="grey lighten-3">
+
+
+                            <tr>
+
+                                <td>
+                                    <img
+                                        src="images/Rlogo.png"
+                                        alt="R"
+                                        class="skill-icon"
+                                    >
+                                </td>
 
                                 <td>
                                     R
                                 </td>
 
-                                <td>
-                                    analyse statistique, manipulation et visualisation de données
-                                </td>
+                            </tr>
+
+
+                            <tr>
 
                                 <td>
                                     <img
-                                        src="images/Rlogo.png"
-                                        alt="Icône R"
+                                        src="images/icons8-ms-excel-48.png"
+                                        alt="Excel"
+                                        class="skill-icon"
                                     >
                                 </td>
-                            </tr>
-                                   <tr>
 
                                 <td>
                                     Excel
                                 </td>
 
-                                <td>
-                                   Analyse de données, fonctions avancées, tableaux croisés dynamiques et tableaux de bord
-                                </td>
-
-                                <td>
-                                    <img
-                                        src="images/icons8-ms-excel-48.png"
-                                        alt="Icône Excel"
-                                    >
-                                </td>
-
                             </tr>
 
+
                             <tr>
-                                 <tr class="grey lighten-3">
-
-                                <td>
-                                    PowerBI
-                                </td>
-
-                                <td>
-                                    Analyse de données, création de dashboards interactifs et visualisation des KPI
-                                </td>
 
                                 <td>
                                     <img
                                         src="images/icons8-power-bi-48.png"
-                                        alt="Icône PowerBI"
+                                        alt="Power BI"
+                                        class="skill-icon"
                                     >
                                 </td>
+
+                                <td>
+                                    Power BI
+                                </td>
+
                             </tr>
-                                   <tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <img
+                                        src="images/html-5.png"
+                                        alt="HTML"
+                                        class="skill-icon"
+                                    >
+                                </td>
 
                                 <td>
                                     HTML
                                 </td>
 
-                                <td>
-                                    Construire la structure des sites web.
-                                </td>
-
-                                <td>
-                                    <img
-                                        src="images/html-5.png"
-                                        alt="Icône HTML"
-                                    >
-                                </td>
-
                             </tr>
 
 
-                            <tr class="grey lighten-3">
+                            <tr>
+
+                                <td>
+                                    <img
+                                        src="images/css-3.png"
+                                        alt="CSS"
+                                        class="skill-icon"
+                                    >
+                                </td>
 
                                 <td>
                                     CSS
                                 </td>
 
-                                <td>
-                                    Styliser les pages web avec un design moderne.
-                                </td>
+                            </tr>
+
+
+                            <tr>
 
                                 <td>
                                     <img
-                                        src="images/css-3.png"
-                                        alt="Icône CSS"
+                                        src="images/script-java.png"
+                                        alt="JavaScript"
+                                        class="skill-icon"
                                     >
+                                </td>
+
+                                <td>
+                                    JavaScript et frameworks
+                                    (React / NodeJS)
                                 </td>
 
                             </tr>
@@ -649,121 +1087,100 @@ back-end.
                             <tr>
 
                                 <td>
-                                    JavaScript et ses frameworks
-                                    (React / NodeJS)
-                                </td>
-
-                                <td>
-                                    Rendre les sites interactifs et dynamiques.
-                                </td>
-
-                                <td>
                                     <img
-                                        src="images/script-java.png"
-                                        alt="Icône JavaScript"
+                                        src="images/python.png"
+                                        alt="Python"
+                                        class="skill-icon"
                                     >
                                 </td>
-
-                            </tr>
-
-
-                            <tr class="grey lighten-3">
 
                                 <td>
                                     Python
                                 </td>
 
-                                <td>
-                                    Développement back-end et front-end.
-                                </td>
-
-                                <td>
-                                    <img
-                                        src="images/python.png"
-                                        alt="Icône Python"
-                                    >
-                                </td>
-
                             </tr>
 
 
                             <tr>
+
+                                <td>
+                                    <img
+                                        src="images/mysql.png"
+                                        alt="MySQL"
+                                        class="skill-icon"
+                                    >
+                                </td>
 
                                 <td>
                                     MySQL
                                 </td>
 
-                                <td>
-                                    Développement back-end et scripts
-                                    d'automatisation.
-                                </td>
-
-                                <td>
-                                    <img
-                                        src="images/mysql.png"
-                                        alt="Icône MySQL"
-                                    >
-                                </td>
-
                             </tr>
 
 
                             <tr>
+
+                                <td>
+                                    <img
+                                        src="images/java.png"
+                                        alt="Java"
+                                        class="skill-icon"
+                                    >
+                                </td>
 
                                 <td>
                                     Java
                                 </td>
 
-                                <td>
-                                    Développement d'applications.
-                                </td>
-
-                                <td>
-                                    <img
-                                        src="images/java.png"
-                                        alt="Icône Java"
-                                    >
-                                </td>
-
                             </tr>
 
 
-                            <tr class="grey lighten-3">
+                            <tr>
+
+                                <td>
+                                    <img
+                                        src="images/free-mongodb-logo-icon-download-in-svg-png-gif-file-formats--wordmark-programming-langugae-freebies-pack-logos-icons-1175140.webp"
+                                        alt="MongoDB"
+                                        class="skill-icon"
+                                    >
+                                </td>
 
                                 <td>
                                     MongoDB
                                 </td>
 
-                                <td>
-                                    Développement back-end et scripts
-                                    d'automatisation.
-                                </td>
-
-                                <td>
-                                    <img
-                                        src="images/free-mongodb-logo-icon-download-in-svg-png-gif-file-formats--wordmark-programming-langugae-freebies-pack-logos-icons-1175140.webp"
-                                        alt="Icône MongoDB"
-                                    >
-                                </td>
-
                             </tr>
 
 
                             <tr>
+
+                                <td>
+                                    <img
+                                        src="images/icons8-powershell-48.png"
+                                        alt="PowerShell"
+                                        class="skill-icon"
+                                    >
+                                </td>
 
                                 <td>
                                     PowerShell
                                 </td>
 
-                                <td>
-                                    Scripts pour l'administration système.
-                                </td>
+                            </tr>
+
+
+                            <tr>
 
                                 <td>
                                     <img
-                                        src="images/icons8-powershell-48.png"
-                                        alt="Icône PowerShell"
+                                        src="images/icons8-c-48.png"
+                                        alt="C et C++"
+                                        class="skill-icon"
                                     >
+                                </td>
+
+                                <td>
+                                    C / C++
                                 </td>
 
                             </tr>
@@ -772,60 +1189,34 @@ back-end.
                             <tr>
 
                                 <td>
-                                    C/C++
-                                </td>
-
-                                <td>
-                                    Développement d'applications.
-                                </td>
-
-                                <td>
                                     <img
-                                        src="images/icons8-c-48.png"
-                                        alt="Icône C/C++"
+                                        src="images/icons8-bootstrap-48.png"
+                                        alt="Bootstrap"
+                                        class="skill-icon"
                                     >
                                 </td>
-
-                            </tr>
-
-
-                            <tr class="grey lighten-3">
 
                                 <td>
                                     Bootstrap
                                 </td>
 
-                                <td>
-                                    Rendre les sites web responsifs.
-                                </td>
-
-                                <td>
-                                    <img
-                                        src="images/icons8-bootstrap-48.png"
-                                        alt="Icône Bootstrap"
-                                    >
-                                </td>
-
                             </tr>
 
 
                             <tr>
+
+                                <td>
+                                    <img
+                                        src="images/icons8-github-30.png"
+                                        alt="GitHub"
+                                        class="skill-icon"
+                                    >
+                                </td>
 
                                 <td>
                                     GitHub
                                 </td>
 
-                                <td>
-                                    Organisation des projets.
-                                </td>
-
-                                <td>
-                                    <img
-                                        src="images/icons8-github-30.png"
-                                        alt="Icône GitHub"
-                                    >
-                                </td>
-
                             </tr>
 
 
@@ -840,38 +1231,37 @@ back-end.
         </section>
 
 
+        <!-- ==================================================
+             FORMATION
+        ================================================== -->
 
-        <!-- ==============================
-             FORMATIONS
-        ============================== -->
-
-        <section class="page-section education-section">
+        <section class="page-section">
 
             <div class="container">
 
-                <h2 class="section-title center-align grey-text text-darken-2">
-                    Formations
+                <h2 class="center-align section-title">
+                    Ma formation
                 </h2>
 
 
-                <div class="table-container">
+                <div class="education-table">
 
-                    <table class="highlight responsive-table">
+                    <table class="highlight centered">
 
                         <thead>
 
                             <tr>
 
                                 <th>
-                                    Années
+                                    Année
                                 </th>
 
                                 <th>
-                                    École / Description
+                                    Établissement
                                 </th>
 
-                                <th class="center-align">
-                                    Icône
+                                <th>
+                                    Formation
                                 </th>
 
                             </tr>
@@ -880,88 +1270,73 @@ back-end.
 
 
                         <tbody>
-                            <tr>
 
-                                <td>
-                                    2026 - en cours
-                                </td>
-
-                                <td>
-                                    <strong>Université catholique de Lille</strong>
-                                    <br>
-                                    Master 2 Data et IA 
-                                </td>
-
-                                <td>
-                                    <img
-                                        src="images/logo-version-principale-verticale-RVB-240710034307.jpg"
-                                        alt="Logo univ-catholique"
-                                    >
-                                </td>
-
-                            </tr>
-
- <tr class="grey lighten-3">
-
-                                <td>
-                                    2025 - 2026
-                                </td>
-
-                                <td>
-                                    <strong>Université catholique de Lille</strong>
-                                    <br>
-                                    Master 1 Data et IA 
-                                </td>
-
-                                <td>
-                                    <img
-                                        src="images/logo-version-principale-verticale-RVB-240710034307.jpg"
-                                        alt="Logo univ-catholique"
-                                    >
-                                </td>
-
-                            </tr>
 
                             <tr>
 
                                 <td>
-                                    2024 - 2025
+                                    2026 – en cours
                                 </td>
 
                                 <td>
-                                    <strong>EPITECH-LILLE</strong>
-                                    <br>
+                                    Université catholique de Lille
+                                </td>
+
+                                <td>
+                                    Master 2 Data et IA
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    2025 – 2026
+                                </td>
+
+                                <td>
+                                    Université catholique de Lille
+                                </td>
+
+                                <td>
+                                    Master 1 Data et IA
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    2024 – 2025
+                                </td>
+
+                                <td>
+                                    EPITECH-LILLE
+                                </td>
+
+                                <td>
                                     3ème année pré-MSC
                                 </td>
 
-                                <td>
-                                    <img
-                                        src="images/Epitech.png"
-                                        alt="Logo EPITECH"
-                                    >
-                                </td>
-
                             </tr>
 
 
-                            <tr class="grey lighten-3">
+                            <tr>
 
                                 <td>
-                                    2023 - 2024
+                                    2023 – 2024
                                 </td>
 
                                 <td>
-                                    <strong>JUNIA-ISEN</strong>
-                                    <br>
+                                    JUNIA-ISEN
+                                </td>
+
+                                <td>
                                     3ème année CIR3
-                                    (cycle informatique et réseaux)
-                                </td>
-
-                                <td>
-                                    <img
-                                        src="images/junia_ingnieurs_cover.jpeg"
-                                        alt="Logo JUNIA-ISEN"
-                                    >
+                                    <br>
+                                    Cycle informatique et réseaux
                                 </td>
 
                             </tr>
@@ -970,42 +1345,15 @@ back-end.
                             <tr>
 
                                 <td>
-                                    2022 - 2023
+                                    2022 – 2023
                                 </td>
 
                                 <td>
-                                    <strong>BEM TECH</strong>
-                                    <br>
+                                    BEM TECH
+                                </td>
+
+                                <td>
                                     2ème année classe prépa intégrée
-                                </td>
-
-                                <td>
-                                    <img
-                                        src="images/logo-BEMTECH-VF.png"
-                                        alt="Logo BEM TECH"
-                                    >
-                                </td>
-
-                            </tr>
-
-
-                            <tr class="grey lighten-3">
-
-                                <td>
-                                    2021 - 2022
-                                </td>
-
-                                <td>
-                                    <strong>BEM TECH</strong>
-                                    <br>
-                                    2ème année classe prépa intégrée
-                                </td>
-
-                                <td>
-                                    <img
-                                        src="images/logo-BEMTECH-VF.png"
-                                        alt="Logo BEM TECH"
-                                    >
                                 </td>
 
                             </tr>
@@ -1014,22 +1362,34 @@ back-end.
                             <tr>
 
                                 <td>
-                                    2020 - 2021
+                                    2021 – 2022
                                 </td>
 
                                 <td>
-                                    <strong>Cabis-School</strong>
-                                    <br>
+                                    BEM TECH
+                                </td>
+
+                                <td>
+                                    2ème année classe prépa intégrée
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    2020 – 2021
+                                </td>
+
+                                <td>
+                                    Cabis-School
+                                </td>
+
+                                <td>
                                     Baccalauréat S
                                 </td>
 
-                                <td>
-                                    <img
-                                        src="images/cabis_school.jpg"
-                                        alt="Logo Cabis-School"
-                                    >
-                                </td>
-
                             </tr>
 
 
@@ -1044,79 +1404,63 @@ back-end.
         </section>
 
 
+        <!-- ==================================================
+             CENTRES D'INTÉRÊT
+        ================================================== -->
 
-        <!-- ==============================
-             CENTRES D'INTÉRÊTS
-        ============================== -->
-
-        <section class="page-section interests-section">
+        <section class="page-section">
 
             <div class="container">
 
-                <h2 class="section-title center-align grey-text text-darken-2">
-                    Centres d'intérêts
+                <h2 class="center-align section-title">
+                    Mes centres d'intérêt
                 </h2>
 
 
-                <div class="table-container">
-
-                    <table class="highlight responsive-table">
-
-                        <thead>
-
-                            <tr>
-
-                                <th>
-                                    Centre d'intérêt
-                                </th>
-
-                                <th class="center-align">
-                                    Icône
-                                </th>
-
-                            </tr>
-
-                        </thead>
+                <div class="row">
 
 
-                        <tbody>
+                    <!-- JEUX VIDÉOS -->
+
+                    <div class="col s12 m6">
+
+                        <div class="interest-card">
+
+                            <img
+                                src="images/jeux.png"
+                                alt="Jeux vidéos"
+                                class="interest-image"
+                            >
+
+                            <h3 class="interest-title">
+                                Jeux vidéos
+                            </h3>
+
+                        </div>
+
+                    </div>
 
 
-                            <tr>
+                    <!-- FOOTBALL -->
 
-                                <td>
-                                    Jeux vidéos
-                                </td>
+                    <div class="col s12 m6">
 
-                                <td>
-                                    <img
-                                        src="images/jeux.png"
-                                        alt="Icône jeux vidéos"
-                                    >
-                                </td>
+                        <div class="interest-card">
 
-                            </tr>
+                            <img
+                                src="images/variante-de-ballon-de-football.png"
+                                alt="Football"
+                                class="interest-image"
+                            >
 
+                            <h3 class="interest-title">
+                                Football
+                            </h3>
 
-                            <tr class="grey lighten-3">
+                        </div>
 
-                                <td>
-                                    Football
-                                </td>
+                    </div>
 
-                                <td>
-                                    <img
-                                        src="images/variante-de-ballon-de-football.png"
-                                        alt="Icône football"
-                                    >
-                                </td>
-
-                            </tr>
-
-
-                        </tbody>
-
-                    </table>
 
                 </div>
 
@@ -1125,48 +1469,71 @@ back-end.
         </section>
 
 
-
-        <!-- ==============================
+        <!-- ==================================================
              LANGUES
-        ============================== -->
+        ================================================== -->
 
-        <section class="page-section languages-section">
+        <section class="page-section">
 
             <div class="container">
 
-                <h2 class="section-title center-align grey-text text-darken-2">
-                    Langages
+                <h2 class="center-align section-title">
+                    Langues
                 </h2>
 
 
-                <!-- Anglais -->
+                <!-- ANGLAIS -->
 
-                <h5 class="language-title">
-                    Niveau anglais
-                </h5>
+                <div class="language-card">
 
-                <div class="progress">
+                    <div class="language-name">
 
-                    <div
-                        class="determinate"
-                        style="width: 75%;"
-                    ></div>
+                        Anglais
+
+                        <span class="language-percentage">
+                            75%
+                        </span>
+
+                        <div style="clear: both;"></div>
+
+                    </div>
+
+                    <div class="progress language-progress">
+
+                        <div
+                            class="determinate"
+                            style="width: 75%;"
+                        ></div>
+
+                    </div>
 
                 </div>
 
 
-                <!-- Français -->
+                <!-- FRANÇAIS -->
 
-                <h5 class="language-title">
-                    Niveau français
-                </h5>
+                <div class="language-card">
 
-                <div class="progress">
+                    <div class="language-name">
 
-                    <div
-                        class="determinate"
-                        style="width: 100%;"
-                    ></div>
+                        Français
+
+                        <span class="language-percentage">
+                            100%
+                        </span>
+
+                        <div style="clear: both;"></div>
+
+                    </div>
+
+                    <div class="progress language-progress">
+
+                        <div
+                            class="determinate"
+                            style="width: 100%;"
+                        ></div>
+
+                    </div>
 
                 </div>
 
@@ -1178,152 +1545,170 @@ back-end.
     </main>
 
 
+   <!-- =====================================================
+     FOOTER
+====================================================== -->
 
-    <!-- ==============================
-         FOOTER
-    ============================== -->
-
-    <footer class="page-footer">
-
-        <div class="container">
-
-            <div class="row footer-content">
+<footer class="page-footer">
 
 
-                <!-- Contact -->
-
-                <div class="col s12 l6">
-
-                    <h5 class="white-text">
-                        Me Contacter
-                    </h5>
-
-                    <p class="grey-text text-lighten-4">
-                        Vous pouvez me joindre via :
-                    </p>
+    <div class="container">
 
 
-                    <ul class="footer-links">
-
-                        <li>
-
-                            Email :
-
-                            <a
-                                href="mailto:ababacar.ndiaye@gmail.com"
-                                class="white-text"
-                            >
-                                ababacar.ndiaye@gmail.com
-                            </a>
-
-                        </li>
+        <div class="row footer-content">
 
 
-                        <li>
+            <!-- Contact -->
 
-                            Téléphone :
-
-                            <a
-                                href="tel:+33626809385"
-                                class="white-text"
-                            >
-                                +33 0626809385
-                            </a>
-
-                        </li>
-
-                    </ul>
-
-                </div>
+            <div class="col s12 l6">
 
 
+                <h5>
 
-                <!-- Réseaux sociaux -->
+                    Me Contacter
 
-                <div class="col s12 l4 offset-l2 footer-links">
-
-                    <h5 class="white-text">
-                        Suivez-moi
-                    </h5>
+                </h5>
 
 
-                    <ul>
+                <p>
 
-                        <li>
+                    Vous pouvez me joindre via :
 
-                            <a
-                                href="https://x.com/fn_babs"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="white-text"
-                            >
-
-                                <i class="material-icons left">
-                                    alternate_email
-                                </i>
-
-                                Twitter
-
-                            </a>
-
-                        </li>
+                </p>
 
 
-                        <li>
+                <ul class="footer-links">
 
-                            <a
-                                href="https://www.instagram.com/babsnd28/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="white-text"
-                            >
 
-                                <i class="material-icons left">
-                                    photo_camera
-                                </i>
+                    <li>
 
-                                Instagram
+                        Email :
 
-                            </a>
+                        <a
+                            href="mailto:ababacar.ndiaye0428@gmail.com"
+                        >
 
-                        </li>
+                            ababacar.ndiaye0428@gmail.com
 
-                    </ul>
+                        </a>
 
-                </div>
+                    </li>
 
+
+                    <li>
+
+                        Téléphone :
+
+                        <a
+                            href="tel:+33626809385"
+                        >
+
+                            +33 0626809385
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- Réseaux sociaux -->
+
+            <div
+                class="col s12 l4 offset-l2 footer-links"
+            >
+
+
+                <h5>
+
+                    Suivez-moi
+
+                </h5>
+
+
+                <ul>
+
+
+                    <li>
+
+                        <a
+                            href="https://x.com/fn_babs"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            <i class="material-icons">
+                                alternate_email
+                            </i>
+
+                            Twitter
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a
+                            href="https://www.instagram.com/babsnd28/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            <i class="material-icons">
+                                photo_camera
+                            </i>
+
+                            Instagram
+
+                        </a>
+
+                    </li>
+
+                </ul>
 
             </div>
 
         </div>
 
+    </div>
 
 
-        <!-- Copyright -->
 
-        <div class="footer-copyright">
+    <!-- Copyright -->
 
-            <div class="container center-align">
+    <div class="footer-copyright">
 
-                © 2026 Ababacar Ndiaye.
-                Tous droits réservés.
+        <div class="container center-align">
 
-            </div>
+            © 2026 Ababacar Ndiaye.
+            Tous droits réservés.
 
         </div>
 
-    </footer>
+    </div>
+
+</footer>
 
 
 
-    <!-- ==============================
-         JAVASCRIPT
-    ============================== -->
+
+    <!-- ==================================================
+         MATERIALIZE JS
+    ================================================== -->
 
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
     ></script>
 
+
+    <!-- ==================================================
+         INITIALISATION
+    ================================================== -->
 
     <script>
 

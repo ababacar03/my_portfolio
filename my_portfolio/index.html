@@ -1,409 +1,1125 @@
 <!DOCTYPE html>
 
 <html lang="fr">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mon Portfolio - Ababacar Ndiaye</title>
 
-<!-- Material Icons -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<!-- Materialize CSS -->
-<link
-    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    rel="stylesheet"
->
+    <title>Mon Portfolio - Ababacar Ndiaye</title>
 
-<style>
-    /* ==============================
-       GLOBAL
-    ============================== */
 
-    html {
-        scroll-behavior: smooth;
-    }
+    <!-- =====================================================
+         MATERIAL ICONS
+    ====================================================== -->
 
-    body {
-        display: flex;
-        min-height: 100vh;
-        flex-direction: column;
-        margin: 0;
-        overflow-x: hidden;
-    }
+    <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet"
+    >
 
-    main {
-        flex: 1 0 auto;
-    }
 
-    .container {
-        width: 90%;
-        max-width: 1200px;
-    }
+    <!-- =====================================================
+         MATERIALIZE CSS
+    ====================================================== -->
 
-    /* ==============================
-       NAVBAR
-    ============================== */
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        rel="stylesheet"
+    >
 
-    nav {
-        box-shadow: none;
-    }
 
-    .brand-logo {
-        font-size: 1.5rem !important;
-    }
+    <!-- =====================================================
+         STYLE
+    ====================================================== -->
 
-    .sidenav {
-        width: 280px;
-    }
+    <style>
 
-    .sidenav li a {
-        color: white;
-        font-size: 1.1rem;
-    }
+        /* =====================================================
+           PALETTE
+        ====================================================== */
 
-    /* ==============================
-       SECTION INTRODUCTION
-    ============================== */
+        :root {
 
-    .hero-section {
-        padding: 50px 0 30px;
-    }
+            --bg-dark: #070b18;
+            --bg-dark-2: #0d1224;
 
-    .hero-title {
-        margin: 0;
-        font-size: 2.8rem;
-        line-height: 1.25;
-    }
+            --card: #11182b;
+            --card-hover: #151e36;
 
-    .hero-subtitle {
-        margin-top: 25px;
-    }
+            --purple: #8b5cf6;
+            --purple-dark: #6d28d9;
 
-    /* ==============================
-       CV + PROFIL
-    ============================== */
+            --pink: #ec4899;
 
-    .presentation-section {
-        padding: 45px 0 20px;
-    }
+            --blue: #3b82f6;
 
-    .cv-section,
-    .profile-section {
-        margin-bottom: 30px;
-    }
+            --cyan: #06b6d4;
 
-    .section-title {
-        font-size: 2rem;
-        margin-top: 0;
-    }
+            --text: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --muted: #94a3b8;
 
-    .cv-text {
-        line-height: 1.7;
-    }
-
-    .cv-button {
-        margin-top: 10px;
-    }
-
-    .profile-card {
-        background-color: #26a69a;
-        height: 100%;
-    }
-
-    .profile-image {
-        width: 190px;
-        max-width: 100%;
-        display: block;
-        margin: 0 auto 25px;
-    }
-
-    .profile-text {
-        line-height: 1.7;
-        text-align: justify;
-    }
-
-    .card-action {
-        text-align: center;
-    }
-
-    .card-action a {
-        margin: 0 10px !important;
-    }
-
-    /* ==============================
-       CONTACT
-    ============================== */
-
-    .contact-section {
-        padding: 40px 0 60px;
-    }
-
-    .contact-title {
-        margin-bottom: 40px;
-    }
-
-    #contact-form {
-        width: 100%;
-    }
-
-    .input-field {
-        margin-bottom: 20px;
-    }
-
-    textarea.materialize-textarea {
-        min-height: 150px;
-    }
-
-    .copy-email-container {
-        margin-top: 10px;
-    }
-
-    .submit-container {
-        margin-top: 25px;
-    }
-
-    #loading-spinner {
-        margin-left: 15px;
-        vertical-align: middle;
-    }
-
-    /* ==============================
-       FOOTER
-    ============================== */
-
-    .page-footer {
-        background-color: #26a69a;
-        padding-top: 30px;
-    }
-
-    .footer-content {
-        padding-bottom: 15px;
-    }
-
-    .footer-links li {
-        margin-bottom: 8px;
-    }
-
-    .footer-links a {
-        word-break: break-word;
-    }
-
-    .footer-copyright {
-        background-color: #00796b;
-        padding: 12px 0;
-    }
-
-    /* ==============================
-       TABLETTE
-    ============================== */
-
-    @media only screen and (max-width: 992px) {
-
-        .brand-logo {
-            font-size: 1.3rem !important;
+            --border: rgba(139, 92, 246, 0.25);
         }
 
-        .hero-title {
-            font-size: 2.4rem;
+
+        /* =====================================================
+           GLOBAL
+        ====================================================== */
+
+        html {
+
+            scroll-behavior: smooth;
         }
 
-        .profile-image {
-            width: 170px;
+
+        body {
+
+            display: flex;
+
+            min-height: 100vh;
+
+            flex-direction: column;
+
+            margin: 0;
+
+            overflow-x: hidden;
+
+            background:
+
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(139, 92, 246, 0.12),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 85% 70%,
+                    rgba(6, 182, 212, 0.10),
+                    transparent 30%
+                ),
+
+                var(--bg-dark);
+
+            color: var(--text);
         }
-    }
 
-    /* ==============================
-       MOBILE
-    ============================== */
 
-    @media only screen and (max-width: 600px) {
+        main {
+
+            flex: 1 0 auto;
+        }
+
 
         .container {
-            width: 92%;
+
+            width: 90%;
+
+            max-width: 1200px;
         }
+
+
+        /* =====================================================
+           NAVBAR
+        ====================================================== */
+
+        nav {
+
+            height: 70px;
+
+            line-height: 70px;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #080b18,
+                    #11152b,
+                    #16102e
+                ) !important;
+
+            box-shadow:
+
+                0 4px 25px rgba(0, 0, 0, 0.45);
+
+            border-bottom:
+
+                1px solid rgba(139, 92, 246, 0.20);
+        }
+
+
+        .nav-wrapper {
+
+            height: 70px;
+        }
+
 
         .brand-logo {
-            font-size: 1.15rem !important;
+
+            font-size: 1.45rem !important;
+
+            font-weight: 700;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #a78bfa,
+                    #22d3ee
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            background-clip: text;
         }
 
-        .hero-section {
-            padding: 35px 0 20px;
+
+        nav ul li a {
+
+            color: #e2e8f0;
+
+            font-weight: 500;
+
+            transition: all 0.3s ease;
         }
 
-        .hero-title {
-            font-size: 2rem;
-            line-height: 1.3;
+
+        nav ul li a:hover {
+
+            color: #a78bfa;
+
+            background:
+
+                rgba(139, 92, 246, 0.08);
         }
 
-        .hero-subtitle {
-            font-size: 1rem;
-            margin-top: 20px;
+
+        .sidenav-trigger i {
+
+            color: white;
         }
+
+
+        .sidenav {
+
+            width: 280px;
+
+            background:
+
+                linear-gradient(
+                    180deg,
+                    #0b1020,
+                    #130d28
+                );
+        }
+
+
+        .sidenav li a {
+
+            color: white !important;
+
+            font-size: 1.1rem;
+
+            transition: 0.3s;
+        }
+
+
+        .sidenav li a:hover {
+
+            background:
+
+                rgba(139, 92, 246, 0.15);
+
+            color: #a78bfa !important;
+        }
+
+
+        /* =====================================================
+           SECTIONS
+        ====================================================== */
 
         .presentation-section {
-            padding-top: 25px;
+
+            padding: 70px 0 40px;
+
+            position: relative;
         }
 
-        .section-title {
-            font-size: 1.8rem;
+
+        .hero-section {
+
+            padding: 70px 0 80px;
+
+            position: relative;
         }
 
-        .cv-section {
-            text-align: center;
-        }
-
-        .cv-button {
-            width: 100%;
-            max-width: 250px;
-        }
-
-        .profile-image {
-            width: 160px;
-        }
-
-        .profile-text {
-            text-align: left;
-            font-size: 0.95rem;
-        }
-
-        .card-action {
-            padding: 15px 5px !important;
-        }
-
-        .card-action a {
-            display: inline-block;
-            margin: 5px 8px !important;
-        }
 
         .contact-section {
-            padding: 25px 0 45px;
+
+            padding: 70px 0 90px;
+
+            position: relative;
+
+            background:
+
+                linear-gradient(
+                    180deg,
+                    transparent,
+                    rgba(15, 23, 42, 0.65)
+                );
         }
 
-        .contact-title {
-            margin-bottom: 25px;
+
+        /* =====================================================
+           TITRES
+        ====================================================== */
+
+        .section-title {
+
+            font-size: 2rem;
+
+            margin-top: 0;
+
+            font-weight: 700;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #a78bfa,
+                    #22d3ee
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            background-clip: text;
         }
 
-        .footer-content {
-            text-align: center;
+
+        .hero-title {
+
+            margin: 0;
+
+            font-size: 3.4rem;
+
+            line-height: 1.25;
+
+            font-weight: 800;
+
+            letter-spacing: -1px;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #ffffff 10%,
+                    #a78bfa 45%,
+                    #22d3ee 90%
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            background-clip: text;
+
+            text-shadow:
+
+                0 0 30px rgba(139, 92, 246, 0.15);
         }
 
-        .footer-content ul {
-            padding: 0;
-        }
 
-        .footer-links {
+        .hero-subtitle {
+
             margin-top: 30px;
         }
 
-        .footer-copyright {
-            font-size: 0.85rem;
-        }
-    }
 
-    /* ==============================
-       TRÈS PETITS ÉCRANS
-    ============================== */
+        /* =====================================================
+           CV
+        ====================================================== */
 
-    @media only screen and (max-width: 400px) {
+        .cv-section,
+        .profile-section {
 
-        .brand-logo {
-            font-size: 1rem !important;
+            margin-bottom: 30px;
         }
 
-        .hero-title {
-            font-size: 1.7rem;
+
+        .cv-text {
+
+            color: var(--text-secondary);
+
+            line-height: 1.8;
+
+            font-size: 1.05rem;
         }
 
-        .section-title {
-            font-size: 1.6rem;
+
+        /* =====================================================
+           BOUTONS
+        ====================================================== */
+
+        .btn {
+
+            border-radius: 10px !important;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    var(--purple),
+                    var(--pink)
+                ) !important;
+
+            box-shadow:
+
+                0 8px 25px rgba(139, 92, 246, 0.35);
+
+            text-transform: none !important;
+
+            font-weight: 600;
+
+            transition:
+
+                transform 0.3s ease,
+
+                box-shadow 0.3s ease;
         }
+
+
+        .btn:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+
+                0 12px 35px rgba(139, 92, 246, 0.55);
+        }
+
+
+        .cv-button {
+
+            margin-top: 15px;
+        }
+
+
+        /* =====================================================
+           PROFIL CARD
+        ====================================================== */
+
+        .profile-card {
+
+            height: 100%;
+
+            overflow: hidden;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #11182b,
+                    #17102e
+                ) !important;
+
+            border:
+
+                1px solid var(--border);
+
+            border-radius: 22px !important;
+
+            box-shadow:
+
+                0 15px 50px rgba(0, 0, 0, 0.35);
+
+            transition:
+
+                transform 0.35s ease,
+
+                box-shadow 0.35s ease;
+        }
+
+
+        .profile-card:hover {
+
+            transform: translateY(-6px);
+
+            box-shadow:
+
+                0 20px 60px rgba(139, 92, 246, 0.20);
+        }
+
+
+        .profile-card .card-content {
+
+            padding: 35px;
+        }
+
 
         .profile-image {
-            width: 140px;
+
+            width: 190px;
+
+            max-width: 100%;
+
+            display: block;
+
+            margin: 0 auto 30px;
+
+            border:
+
+                4px solid rgba(139, 92, 246, 0.45);
+
+            box-shadow:
+
+                0 0 35px rgba(139, 92, 246, 0.30);
         }
 
+
         .profile-text {
-            font-size: 0.9rem;
+
+            color: var(--text-secondary);
+
+            line-height: 1.8;
+
+            text-align: justify;
         }
-    }
-</style>
+
+
+        .profile-card .card-action {
+
+            background:
+
+                rgba(0, 0, 0, 0.18) !important;
+
+            border-top:
+
+                1px solid rgba(139, 92, 246, 0.18) !important;
+
+            text-align: center;
+        }
+
+
+        .card-action a {
+
+            margin: 0 15px !important;
+
+            color: #c4b5fd !important;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+
+        .card-action a:hover {
+
+            color: #22d3ee !important;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ====================================================== */
+
+        .contact-title {
+
+            margin-bottom: 50px;
+        }
+
+
+        #contact-form {
+
+            width: 100%;
+
+            max-width: 900px;
+
+            margin: auto;
+
+            padding: 40px;
+
+            background:
+
+                rgba(17, 24, 43, 0.85);
+
+            border:
+
+                1px solid rgba(139, 92, 246, 0.22);
+
+            border-radius: 22px;
+
+            box-shadow:
+
+                0 20px 60px rgba(0, 0, 0, 0.30);
+        }
+
+
+        .input-field {
+
+            margin-bottom: 25px;
+        }
+
+
+        .input-field input,
+        .input-field textarea {
+
+            color: white !important;
+
+            border-bottom:
+
+                1px solid rgba(148, 163, 184, 0.35) !important;
+        }
+
+
+        .input-field input:focus,
+        .input-field textarea:focus {
+
+            border-bottom:
+
+                2px solid var(--purple) !important;
+
+            box-shadow:
+
+                0 1px 0 0 var(--purple) !important;
+        }
+
+
+        .input-field label {
+
+            color: var(--muted) !important;
+        }
+
+
+        .input-field input:focus + label,
+        .input-field textarea:focus + label {
+
+            color: #a78bfa !important;
+        }
+
+
+        textarea.materialize-textarea {
+
+            min-height: 150px;
+        }
+
+
+        .input-field small {
+
+            color: var(--muted);
+        }
+
+
+        .submit-container {
+
+            margin-top: 30px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        .page-footer {
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #080b18,
+                    #11152b,
+                    #160d2c
+                ) !important;
+
+            padding-top: 40px;
+
+            border-top:
+
+                1px solid rgba(139, 92, 246, 0.20);
+        }
+
+
+        .footer-content {
+
+            padding-bottom: 20px;
+        }
+
+
+        .page-footer h5 {
+
+            font-weight: 700;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #a78bfa
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            background-clip: text;
+        }
+
+
+        .page-footer p,
+        .page-footer li {
+
+            color: #94a3b8 !important;
+        }
+
+
+        .footer-links li {
+
+            margin-bottom: 12px;
+        }
+
+
+        .footer-links a {
+
+            color: #c4b5fd !important;
+
+            transition: 0.3s;
+        }
+
+
+        .footer-links a:hover {
+
+            color: #22d3ee !important;
+        }
+
+
+        .footer-copyright {
+
+            background:
+
+                rgba(0, 0, 0, 0.30) !important;
+
+            padding: 15px 0;
+
+            border-top:
+
+                1px solid rgba(139, 92, 246, 0.10);
+        }
+
+
+        /* =====================================================
+           ICÔNES
+        ====================================================== */
+
+        .material-icons {
+
+            vertical-align: middle;
+        }
+
+
+        /* =====================================================
+           EFFETS LUMINEUX
+        ====================================================== */
+
+        .presentation-section::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+
+            height: 300px;
+
+            top: 20px;
+
+            left: -150px;
+
+            background:
+
+                rgba(139, 92, 246, 0.08);
+
+            filter: blur(80px);
+
+            border-radius: 50%;
+
+            pointer-events: none;
+        }
+
+
+        .hero-section::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+
+            height: 300px;
+
+            right: -150px;
+
+            bottom: -100px;
+
+            background:
+
+                rgba(6, 182, 212, 0.08);
+
+            filter: blur(80px);
+
+            border-radius: 50%;
+
+            pointer-events: none;
+        }
+
+
+        /* =====================================================
+           TABLETTE
+        ====================================================== */
+
+        @media only screen and (max-width: 992px) {
+
+            .brand-logo {
+
+                font-size: 1.3rem !important;
+            }
+
+
+            .hero-title {
+
+                font-size: 2.7rem;
+            }
+
+
+            .profile-image {
+
+                width: 170px;
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media only screen and (max-width: 600px) {
+
+            .container {
+
+                width: 92%;
+            }
+
+
+            .brand-logo {
+
+                font-size: 1.15rem !important;
+            }
+
+
+            nav,
+            .nav-wrapper {
+
+                height: 62px;
+
+                line-height: 62px;
+            }
+
+
+            .hero-section {
+
+                padding: 50px 0 60px;
+            }
+
+
+            .hero-title {
+
+                font-size: 2.1rem;
+
+                line-height: 1.3;
+            }
+
+
+            .hero-subtitle {
+
+                font-size: 1rem;
+
+                margin-top: 25px;
+            }
+
+
+            .presentation-section {
+
+                padding-top: 45px;
+            }
+
+
+            .section-title {
+
+                font-size: 1.8rem;
+            }
+
+
+            .cv-section {
+
+                text-align: center;
+            }
+
+
+            .cv-button {
+
+                width: 100%;
+
+                max-width: 250px;
+            }
+
+
+            .profile-card .card-content {
+
+                padding: 25px;
+            }
+
+
+            .profile-image {
+
+                width: 160px;
+            }
+
+
+            .profile-text {
+
+                text-align: left;
+
+                font-size: 0.95rem;
+            }
+
+
+            #contact-form {
+
+                padding: 25px 20px;
+            }
+
+
+            .contact-section {
+
+                padding: 50px 0 60px;
+            }
+
+
+            .contact-title {
+
+                margin-bottom: 30px;
+            }
+
+
+            .footer-content {
+
+                text-align: center;
+            }
+
+
+            .footer-links {
+
+                margin-top: 30px;
+            }
+
+
+            .footer-copyright {
+
+                font-size: 0.85rem;
+            }
+
+        }
+
+
+        /* =====================================================
+           TRÈS PETITS ÉCRANS
+        ====================================================== */
+
+        @media only screen and (max-width: 400px) {
+
+            .brand-logo {
+
+                font-size: 1rem !important;
+            }
+
+
+            .hero-title {
+
+                font-size: 1.7rem;
+            }
+
+
+            .section-title {
+
+                font-size: 1.6rem;
+            }
+
+
+            .profile-image {
+
+                width: 140px;
+            }
+
+
+            .profile-text {
+
+                font-size: 0.9rem;
+            }
+
+
+            #contact-form {
+
+                padding: 20px 15px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
-<body class="grey lighten-4">
 
-<!-- ==============================
+<body>
+
+
+<!-- =====================================================
      NAVBAR
-============================== -->
+====================================================== -->
 
-<nav class="teal lighten-1">
+<nav>
+
     <div class="nav-wrapper container">
 
-        <a href="index.html" class="brand-logo">
+
+        <!-- Nom -->
+
+        <a
+            href="index.html"
+            class="brand-logo"
+        >
             Ababacar Ndiaye
         </a>
 
-        <!-- Bouton menu mobile -->
+
+        <!-- Menu mobile -->
+
         <a
             href="#"
             data-target="mobile-menu"
             class="sidenav-trigger"
         >
-            <i class="material-icons">menu</i>
+
+            <i class="material-icons">
+                menu
+            </i>
+
         </a>
 
+
         <!-- Menu ordinateur -->
+
         <ul class="right hide-on-med-and-down">
-            <li>
-                <a href="index.html">Accueil</a>
-            </li>
 
             <li>
-                <a href="last_projects.html">Projets</a>
+
+                <a href="index.html">
+                    Accueil
+                </a>
+
             </li>
 
+
             <li>
-                <a href="about_me.html">À propos de moi</a>
+
+                <a href="last_projects.html">
+                    Projets
+                </a>
+
             </li>
+
+
+            <li>
+
+                <a href="about_me.html">
+                    À propos de moi
+                </a>
+
+            </li>
+
         </ul>
 
     </div>
+
 </nav>
 
 
-<!-- ==============================
+
+<!-- =====================================================
      MENU MOBILE
-============================== -->
+====================================================== -->
 
-<ul class="sidenav teal lighten-1" id="mobile-menu">
+<ul
+    class="sidenav"
+    id="mobile-menu"
+>
 
     <li>
-        <a href="index.html" class="white-text">
+
+        <a href="index.html">
+
             Accueil
+
         </a>
+
     </li>
 
+
     <li>
-        <a href="last_projects.html" class="white-text">
+
+        <a href="last_projects.html">
+
             Projets
+
         </a>
+
     </li>
 
+
     <li>
-        <a href="about_me.html" class="white-text">
+
+        <a href="about_me.html">
+
             À propos de moi
+
         </a>
+
     </li>
 
 </ul>
 
 
+
+<!-- =====================================================
+     CONTENU PRINCIPAL
+====================================================== -->
+
 <main>
 
-    <!-- ==============================
+
+    <!-- =================================================
          CV + PROFIL
-    ============================== -->
+    ================================================== -->
 
     <section class="presentation-section">
 
@@ -411,80 +1127,135 @@
 
             <div class="row">
 
-                <!-- CV -->
-                <div class="col s12 m4 cv-section">
 
-                    <h2 class="section-title grey-text text-darken-2">
+                <!-- ==============================
+                     CV
+                =============================== -->
+
+                <div
+                    class="col s12 m4 cv-section"
+                >
+
+                    <h2 class="section-title">
+
                         Mon CV
+
                     </h2>
 
+
                     <p class="cv-text">
-                        Vous pouvez télécharger mon CV en utilisant
-                        le bouton ci-dessous :
+
+                        Vous pouvez télécharger mon CV
+                        en utilisant le bouton ci-dessous :
+
                     </p>
+
 
                     <a
                         href="images/CV_2026-09-03_Ababacar_Ndiaye (1).pdf"
-                        class="btn teal lighten-1 white-text cv-button"
+                        class="btn white-text cv-button"
                         download
                     >
+
+                        <i class="material-icons left">
+                            download
+                        </i>
+
                         Télécharger CV
+
                     </a>
 
                 </div>
 
 
-                <!-- PROFIL -->
-                <div class="col s12 m7 offset-m1 profile-section">
 
-                    <h2 class="section-title grey-text text-darken-2">
+                <!-- ==============================
+                     PROFIL
+                =============================== -->
+
+                <div
+                    class="col s12 m7 offset-m1 profile-section"
+                >
+
+                    <h2 class="section-title">
+
                         Profil
+
                     </h2>
+
 
                     <div class="card profile-card">
 
-                        <div class="card-content white-text">
+
+                        <div class="card-content">
+
 
                             <!-- Photo -->
+
                             <img
                                 src="images/photoAbabacar.jpg"
                                 alt="Photo de profil d'Ababacar Ndiaye"
                                 class="circle responsive-img profile-image"
                             >
 
-                            <!-- Texte -->
+
+                            <!-- Présentation -->
+
                             <p class="profile-text">
-                                Je m'appelle Ababacar Ndiaye, je suis
-                                étudiant en Master 2 Data & IA à
-                                l'université catholique de Lille.
+
+                                Je m'appelle Ababacar Ndiaye,
+                                je suis étudiant en Master 2
+                                Data & IA à l'université catholique
+                                de Lille.
+
+                                <br><br>
 
                                 J'ai toujours été passionné par
-                                l'informatique et la data, ce qui fait
-                                de moi une personne curieuse qui aime
-                                découvrir et essayer de nouvelles choses.
+                                l'informatique et la data, ce qui
+                                fait de moi une personne curieuse
+                                qui aime découvrir et essayer de
+                                nouvelles choses.
+
                             </p>
 
                         </div>
 
-                        <!-- Réseaux -->
+
+
+                        <!-- ==============================
+                             RÉSEAUX
+                        =============================== -->
+
                         <div class="card-action">
+
 
                             <a
                                 href="https://github.com/ababacar03"
-                                class="white-text"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
+
+                                <i class="material-icons left">
+                                    code
+                                </i>
+
                                 GitHub
+
                             </a>
+
 
                             <a
                                 href="https://www.linkedin.com/in/ababacar-ndiaye-793a32302/"
-                                class="white-text"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
+
+                                <i class="material-icons left">
+                                    business_center
+                                </i>
+
                                 LinkedIn
+
                             </a>
 
                         </div>
@@ -500,28 +1271,43 @@
     </section>
 
 
-    <!-- ==============================
+
+    <!-- =================================================
          BIENVENUE
-    ============================== -->
+    ================================================== -->
 
     <section class="hero-section">
 
         <div class="container">
 
-            <h1 class="center-align grey-text text-darken-2 hero-title">
+
+            <h1 class="center-align hero-title">
+
                 BONJOUR !<br>
+
                 VOUS ÊTES BIENVENU<br>
+
                 SUR MON PORTFOLIO
+
             </h1>
 
+
             <div class="center-align hero-subtitle">
+
 
                 <button
                     class="btn waves-effect waves-light"
                     type="button"
                 >
+
+                    <i class="material-icons left">
+                        psychology
+                    </i>
+
                     Data & IA Engineer
+
                 </button>
+
 
             </div>
 
@@ -530,168 +1316,191 @@
     </section>
 
 
-    <!-- ==============================
+
+    <!-- =================================================
          CONTACT
-    ============================== -->
+    ================================================== -->
 
     <section class="contact-section">
 
-      <div class="container">
-
-    <h2 class="center-align grey-text text-darken-2 contact-title">
-        Contact
-    </h2>
-
-    <form
-        action="https://formsubmit.co/ababacar.ndiaye0428@gmail.com"
-        method="POST"
-        id="contact-form"
-    >
-
-        <!-- Nom + prénom -->
-        <div class="row">
-
-            <div class="input-field col s12 m6">
-                <input
-                    id="lastname"
-                    name="Nom"
-                    type="text"
-                    class="validate"
-                    required
-                >
-
-                <label for="lastname">
-                    Nom
-                </label>
-            </div>
+        <div class="container">
 
 
-            <div class="input-field col s12 m6">
-                <input
-                    id="firstname"
-                    name="Prénom"
-                    type="text"
-                    class="validate"
-                    required
-                >
-
-                <label for="firstname">
-                    Prénom
-                </label>
-            </div>
-
-        </div>
-
-
-        <!-- Email -->
-        <div class="row">
-
-            <div class="input-field col s12">
-
-                <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    class="validate"
-                    required
-                >
-
-                <label for="email">
-                    Email
-                </label>
-
-            </div>
-
-        </div>
-
-
-        <!-- Message -->
-        <div class="row">
-
-            <div class="input-field col s12">
-
-                <textarea
-                    id="message"
-                    name="message"
-                    class="materialize-textarea"
-                    required
-                ></textarea>
-
-                <label for="message">
-                    Votre message
-                </label>
-
-                <small>
-                    Suggestions : "Je voudrais plus
-                    d'informations sur..." ou
-                    "J'ai rencontré un problème avec..."
-                </small>
-
-            </div>
-
-        </div>
-
-
-        <!-- Options FormSubmit -->
-        <input
-            type="hidden"
-            name="_subject"
-            value="Nouveau message depuis mon portfolio"
-        >
-
-        <input
-            type="hidden"
-            name="_captcha"
-            value="false"
-        >
-
-
-        <!-- Bouton -->
-        <div class="row center-align submit-container">
-
-            <button
-                class="btn waves-effect waves-light"
-                type="submit"
-                id="submit-btn"
+            <h2
+                class="center-align section-title contact-title"
             >
-                Envoyer
 
-                <i class="material-icons right">
-                    send
-                </i>
+                Contact
 
-            </button>
+            </h2>
 
-        </div>
 
-    </form>
 
-</div>
+            <!-- ==============================
+                 FORMULAIRE
+            =============================== -->
 
-                    <!-- Loader -->
-                    <div
-                        class="preloader-wrapper small active"
-                        id="loading-spinner"
-                        style="display: none;"
-                    >
+            <form
+                action="https://formsubmit.co/ababacar.ndiaye0428@gmail.com"
+                method="POST"
+                id="contact-form"
+            >
 
-                        <div class="spinner-layer spinner-blue-only">
 
-                            <div class="circle-clipper left">
-                                <div class="circle"></div>
-                            </div>
+                <!-- Nom + prénom -->
 
-                            <div class="gap-patch">
-                                <div class="circle"></div>
-                            </div>
+                <div class="row">
 
-                            <div class="circle-clipper right">
-                                <div class="circle"></div>
-                            </div>
 
-                        </div>
+                    <div class="input-field col s12 m6">
+
+                        <input
+                            id="lastname"
+                            name="Nom"
+                            type="text"
+                            class="validate"
+                            required
+                        >
+
+                        <label for="lastname">
+
+                            Nom
+
+                        </label>
 
                     </div>
+
+
+
+                    <div class="input-field col s12 m6">
+
+                        <input
+                            id="firstname"
+                            name="Prénom"
+                            type="text"
+                            class="validate"
+                            required
+                        >
+
+                        <label for="firstname">
+
+                            Prénom
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Email -->
+
+                <div class="row">
+
+                    <div class="input-field col s12">
+
+
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            class="validate"
+                            required
+                        >
+
+
+                        <label for="email">
+
+                            Email
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Message -->
+
+                <div class="row">
+
+                    <div class="input-field col s12">
+
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            class="materialize-textarea"
+                            required
+                        ></textarea>
+
+
+                        <label for="message">
+
+                            Votre message
+
+                        </label>
+
+
+                        <small>
+
+                            Suggestions :
+                            "Je voudrais plus
+                            d'informations sur..."
+                            ou
+                            "J'ai rencontré un problème
+                            avec..."
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==============================
+                     OPTIONS FORMSUBMIT
+                =============================== -->
+
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="Nouveau message depuis mon portfolio"
+                >
+
+
+                <input
+                    type="hidden"
+                    name="_captcha"
+                    value="false"
+                >
+
+
+
+                <!-- ==============================
+                     BOUTON ENVOYER
+                =============================== -->
+
+                <div
+                    class="row center-align submit-container"
+                >
+
+                    <button
+                        class="btn waves-effect waves-light"
+                        type="submit"
+                        id="submit-btn"
+                    >
+
+                        Envoyer
+
+                        <i class="material-icons right">
+                            send
+                        </i>
+
+                    </button>
 
                 </div>
 
@@ -704,47 +1513,72 @@
 </main>
 
 
-<!-- ==============================
+
+<!-- =====================================================
      FOOTER
-============================== -->
+====================================================== -->
 
 <footer class="page-footer">
 
+
     <div class="container">
+
 
         <div class="row footer-content">
 
-            <!-- Contact -->
+
+            <!-- ==============================
+                 CONTACT
+            =============================== -->
+
             <div class="col s12 l6">
 
-                <h5 class="white-text">
+
+                <h5>
+
                     Me Contacter
+
                 </h5>
 
-                <p class="grey-text text-lighten-4">
-                    Vous pouvez me joindre via les moyens suivants :
+
+                <p>
+
+                    Vous pouvez me joindre via les
+                    moyens suivants :
+
                 </p>
+
 
                 <ul class="footer-links">
 
-                    <li>
-                        Email :
-                        <a
-                            href="mailto:ababacar.ndiaye0428@gmail.com"
-                            class="white-text"
-                        >
-                            ababacar.ndiaye0428@gmail.com
-                        </a>
-                    </li>
 
                     <li>
+
+                        Email :
+
+                        <a
+                            href="mailto:ababacar.ndiaye0428@gmail.com"
+                        >
+
+                            ababacar.ndiaye0428@gmail.com
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
                         Téléphone :
+
                         <a
                             href="tel:+33626809385"
-                            class="white-text"
                         >
+
                             +33 0626809385
+
                         </a>
+
                     </li>
 
                 </ul>
@@ -752,41 +1586,62 @@
             </div>
 
 
-            <!-- Réseaux sociaux -->
-            <div class="col s12 l4 offset-l2 footer-links">
 
-                <h5 class="white-text">
+            <!-- ==============================
+                 RÉSEAUX SOCIAUX
+            =============================== -->
+
+            <div
+                class="col s12 l4 offset-l2 footer-links"
+            >
+
+
+                <h5>
+
                     Suivez-moi
+
                 </h5>
+
 
                 <ul>
 
+
                     <li>
+
                         <a
                             href="https://x.com/fn_babs"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="white-text"
                         >
+
                             <i class="material-icons left">
                                 alternate_email
                             </i>
+
                             Twitter
+
                         </a>
+
                     </li>
 
+
+
                     <li>
+
                         <a
                             href="https://www.instagram.com/babsnd28/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="white-text"
                         >
+
                             <i class="material-icons left">
                                 photo_camera
                             </i>
+
                             Instagram
+
                         </a>
+
                     </li>
 
                 </ul>
@@ -798,8 +1653,13 @@
     </div>
 
 
-    <!-- Copyright -->
+
+    <!-- =================================================
+         COPYRIGHT
+    ================================================== -->
+
     <div class="footer-copyright">
+
 
         <div class="container center-align">
 
@@ -813,14 +1673,48 @@
 </footer>
 
 
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<!-- Materialize JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- =====================================================
+     JQUERY
+====================================================== -->
+
+<script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+></script>
 
 
+
+<!-- =====================================================
+     MATERIALIZE JS
+====================================================== -->
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+></script>
+
+
+
+<!-- =====================================================
+     INITIALISATION MATERIALIZE
+====================================================== -->
+
+<script>
+
+    document.addEventListener(
+        'DOMContentLoaded',
+        function() {
+
+            const elems =
+                document.querySelectorAll('.sidenav');
+
+            M.Sidenav.init(elems);
+
+        }
+    );
+
+</script>
 
 
 </body>
+
 </html>

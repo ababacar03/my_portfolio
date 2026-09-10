@@ -2,931 +2,1719 @@
 <html lang="fr">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Mes projets - Ababacar Ndiaye</title>
 
-    <!-- Material Icons -->
+
+    <!-- =====================================================
+         MATERIAL ICONS
+    ====================================================== -->
+
     <link
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
         rel="stylesheet"
     >
 
-    <!-- Materialize CSS -->
+
+    <!-- =====================================================
+         MATERIALIZE CSS
+    ====================================================== -->
+
     <link
         href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         rel="stylesheet"
     >
 
+
     <style>
 
-        /* ==============================
+        /* =====================================================
+           PALETTE
+        ====================================================== */
+
+        :root {
+
+            --bg-dark: #070b18;
+            --bg-dark-2: #0d1224;
+
+            --card: #11182b;
+            --card-hover: #151e36;
+
+            --purple: #8b5cf6;
+            --purple-dark: #6d28d9;
+
+            --pink: #ec4899;
+
+            --blue: #3b82f6;
+
+            --cyan: #06b6d4;
+
+            --text: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --muted: #94a3b8;
+
+            --border: rgba(139, 92, 246, 0.25);
+        }
+
+
+        /* =====================================================
            GLOBAL
-        ============================== */
+        ====================================================== */
 
         html {
+
             scroll-behavior: smooth;
         }
 
+
         body {
+
             display: flex;
+
             min-height: 100vh;
+
             flex-direction: column;
+
             margin: 0;
+
             overflow-x: hidden;
+
+            background:
+
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(139, 92, 246, 0.12),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(6, 182, 212, 0.10),
+                    transparent 30%
+                ),
+
+                var(--bg-dark);
+
+            color: var(--text);
         }
 
+
         main {
+
             flex: 1 0 auto;
         }
 
+
         .container {
+
             width: 90%;
+
             max-width: 1200px;
         }
 
 
-        /* ==============================
+        /* =====================================================
            NAVBAR
-        ============================== */
+        ====================================================== */
 
         nav {
-            box-shadow: none;
+
+            height: 70px;
+
+            line-height: 70px;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #080b18,
+                    #11152b,
+                    #16102e
+                ) !important;
+
+            box-shadow:
+
+                0 4px 25px rgba(0, 0, 0, 0.45);
+
+            border-bottom:
+
+                1px solid rgba(139, 92, 246, 0.20);
         }
+
+
+        .nav-wrapper {
+
+            height: 70px;
+        }
+
 
         .brand-logo {
-            font-size: 1.5rem !important;
+
+            font-size: 1.45rem !important;
+
+            font-weight: 700;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #a78bfa,
+                    #22d3ee
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            background-clip: text;
         }
+
+
+        nav ul li a {
+
+            color: #e2e8f0;
+
+            font-weight: 500;
+
+            transition: all 0.3s ease;
+        }
+
+
+        nav ul li a:hover {
+
+            color: #a78bfa;
+
+            background:
+
+                rgba(139, 92, 246, 0.08);
+        }
+
+
+        .sidenav-trigger i {
+
+            color: white;
+        }
+
 
         .sidenav {
+
             width: 280px;
+
+            background:
+
+                linear-gradient(
+                    180deg,
+                    #0b1020,
+                    #130d28
+                );
         }
+
 
         .sidenav li a {
+
             color: white !important;
+
             font-size: 1.1rem;
+
+            transition: 0.3s;
         }
 
 
-        /* ==============================
+        .sidenav li a:hover {
+
+            background:
+
+                rgba(139, 92, 246, 0.15);
+
+            color: #a78bfa !important;
+        }
+
+
+        /* =====================================================
            SECTIONS
-        ============================== */
+        ====================================================== */
 
         .page-section {
-            padding: 45px 0;
+
+            padding: 70px 0;
+
+            position: relative;
         }
 
-        .section-title {
-            font-size: 2.2rem;
-            margin-top: 0;
-            margin-bottom: 35px;
-        }
-
-
-        /* ==============================
-           PROJETS
-        ============================== */
 
         .projects-section {
-            padding-bottom: 30px;
+
+            padding-bottom: 80px;
         }
 
-        /* ==============================
-           CARDS PROJETS - DESIGN MODERNE
-        ============================== */
+
+        /* =====================================================
+           TITRE
+        ====================================================== */
+
+        .section-title {
+
+            font-size: 2.5rem;
+
+            margin-top: 0;
+
+            margin-bottom: 45px;
+
+            font-weight: 700;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #a78bfa,
+                    #22d3ee
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            background-clip: text;
+        }
+
+
+        /* =====================================================
+           GRILLE PROJETS
+        ====================================================== */
 
         .projects-grid {
+
             display: flex;
+
             flex-wrap: wrap;
+
             align-items: stretch;
         }
 
+
         .project-col {
+
             display: flex;
+
             margin-bottom: 30px;
         }
 
+
+        /* =====================================================
+           CARD PROJET
+        ====================================================== */
+
         .project-card {
+
             width: 100%;
+
             height: 100%;
+
             margin: 0;
+
             overflow: hidden;
-            background: #ffffff;
-            border-radius: 18px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #11182b,
+                    #17102e
+                );
+
+            border:
+
+                1px solid rgba(139, 92, 246, 0.22);
+
+            border-radius: 20px;
+
+            box-shadow:
+
+                0 12px 40px rgba(0, 0, 0, 0.35);
+
+            transition:
+
+                transform 0.35s ease,
+
+                box-shadow 0.35s ease,
+
+                border-color 0.35s ease;
+
             display: flex;
+
             flex-direction: column;
         }
 
+
         .project-card:hover {
+
             transform: translateY(-8px);
-            box-shadow: 0 16px 35px rgba(0, 0, 0, 0.16);
+
+            border-color:
+
+                rgba(139, 92, 246, 0.55);
+
+            box-shadow:
+
+                0 20px 55px rgba(139, 92, 246, 0.18);
         }
 
+
+        /* =====================================================
+           COVER PROJET
+        ====================================================== */
+
         .project-cover {
+
             height: 190px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
-            background: linear-gradient(135deg, #26a69a, #00796b);
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #31206b,
+                    #5b21b6,
+                    #0e7490
+                );
+
             color: white;
+
             position: relative;
+
             overflow: hidden;
         }
 
-        .project-cover::after {
+
+        .project-cover::before {
+
             content: "";
+
             position: absolute;
-            width: 180px;
-            height: 180px;
+
+            width: 230px;
+
+            height: 230px;
+
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.10);
+
+            background:
+
+                rgba(255, 255, 255, 0.06);
+
+            left: -100px;
+
+            bottom: -130px;
+        }
+
+
+        .project-cover::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+
+            height: 180px;
+
+            border-radius: 50%;
+
+            background:
+
+                rgba(255, 255, 255, 0.10);
+
             right: -55px;
+
             top: -65px;
         }
 
+
         .project-cover .material-icons {
+
             font-size: 72px;
+
             z-index: 1;
+
+            filter:
+
+                drop-shadow(
+                    0 0 15px
+                    rgba(255, 255, 255, 0.35)
+                );
         }
+
+
+        /* =====================================================
+           CONTENU CARD
+        ====================================================== */
 
         .project-content {
-            padding: 24px;
+
+            padding: 25px;
+
             display: flex;
+
             flex-direction: column;
+
             flex: 1;
         }
+
 
         .project-title {
+
             font-size: 1.45rem;
-            font-weight: 600;
+
+            font-weight: 700;
+
             margin: 0 0 15px;
-            color: #263238;
+
+            color: #f8fafc;
         }
 
+
         .project-description {
+
             line-height: 1.7;
+
             text-align: left;
-            color: #546e7a;
+
+            color: #cbd5e1;
+
             margin: 0;
+
             flex: 1;
         }
 
-        .project-tech {
+
+        .project-description a {
+
+            color: #a78bfa;
+
+            font-weight: 600;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+
+        .project-description a:hover {
+
+            color: #22d3ee;
+
+            text-decoration: underline;
+        }
+
+
+        /* =====================================================
+           IMAGES PROJETS
+        ====================================================== */
+
+        .project-content > img {
+
+            width: 100%;
+
+            height: 190px;
+
+            object-fit: cover;
+
             margin-top: 20px;
+
+            border-radius: 12px;
+
+            border:
+
+                1px solid rgba(139, 92, 246, 0.20);
+
+            box-shadow:
+
+                0 8px 25px rgba(0, 0, 0, 0.30);
+
+            transition: 0.35s ease;
+        }
+
+
+        .project-content > img:hover {
+
+            transform: scale(1.02);
+
+            box-shadow:
+
+                0 10px 35px rgba(139, 92, 246, 0.20);
+        }
+
+
+        /* =====================================================
+           TECHNOLOGIES
+        ====================================================== */
+
+        .project-tech {
+
+            margin-top: 20px;
+
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 7px;
         }
 
+
         .tech-badge {
+
             display: inline-block;
-            padding: 5px 10px;
+
+            padding: 6px 11px;
+
             border-radius: 20px;
-            background: #e0f2f1;
-            color: #00796b;
+
+            background:
+
+                rgba(139, 92, 246, 0.12);
+
+            border:
+
+                1px solid rgba(139, 92, 246, 0.25);
+
+            color: #c4b5fd;
+
             font-size: 0.78rem;
+
             font-weight: 600;
         }
 
-        .project-media {
-            margin-top: 20px;
-            border-radius: 12px;
-            overflow: hidden;
-            background: #eceff1;
-        }
 
-        .project-media img,
-        .project-media video {
-            width: 100%;
-            display: block;
-        }
-
-        .project-media video {
-            max-height: 260px;
-            object-fit: cover;
-        }
+        /* =====================================================
+           FOOTER CARD
+        ====================================================== */
 
         .project-footer {
+
             margin-top: 22px;
+
             padding-top: 16px;
-            border-top: 1px solid #eeeeee;
-            color: #26a69a;
+
+            border-top:
+
+                1px solid rgba(148, 163, 184, 0.15);
+
+            color: #22d3ee;
+
             font-size: 0.9rem;
+
             font-weight: 600;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
         }
 
 
-        /* ==============================
+        .project-footer .material-icons {
+
+            font-size: 18px;
+        }
+
+
+        /* =====================================================
            ROBOTIQUE
-        ============================== */
+        ====================================================== */
 
         .robotics-section {
+
             padding-top: 30px;
+
             padding-bottom: 60px;
         }
 
+
         .robotics-description {
+
             line-height: 1.8;
+
             text-align: justify;
+
             margin-bottom: 30px;
+
+            color: var(--text-secondary);
         }
 
 
-        /* ==============================
+        /* =====================================================
            CAROUSEL
-        ============================== */
+        ====================================================== */
 
         .carousel.carousel-slider {
+
             width: 100%;
+
             height: 500px;
-            border-radius: 5px;
+
+            border-radius: 18px;
+
             overflow: hidden;
+
+            border:
+
+                1px solid rgba(139, 92, 246, 0.20);
+
+            box-shadow:
+
+                0 15px 45px rgba(0, 0, 0, 0.35);
         }
+
 
         .carousel .carousel-item {
+
             height: 500px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
-            background-color: #eeeeee;
+
+            background:
+
+                #0d1224;
         }
 
+
         .carousel .carousel-item video {
+
             width: 100%;
+
             height: 100%;
+
             max-width: 100%;
+
             object-fit: contain;
+
             display: block;
         }
 
 
-        /* ==============================
+        /* =====================================================
            FOOTER
-        ============================== */
+        ====================================================== */
 
         .page-footer {
-            background-color: #26a69a;
-            padding-top: 30px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #080b18,
+                    #11152b,
+                    #160d2c
+                ) !important;
+
+            padding-top: 40px;
+
+            border-top:
+
+                1px solid rgba(139, 92, 246, 0.20);
         }
+
 
         .footer-content {
-            padding-bottom: 15px;
+
+            padding-bottom: 20px;
         }
+
+
+        .page-footer h5 {
+
+            font-weight: 700;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #a78bfa
+                );
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            background-clip: text;
+        }
+
+
+        .page-footer p,
+        .page-footer li {
+
+            color: #94a3b8 !important;
+        }
+
 
         .footer-links li {
-            margin-bottom: 8px;
+
+            margin-bottom: 12px;
         }
+
 
         .footer-links a {
-            word-break: break-word;
+
+            color: #c4b5fd !important;
+
+            transition: 0.3s;
         }
+
+
+        .footer-links a:hover {
+
+            color: #22d3ee !important;
+        }
+
 
         .footer-copyright {
-            background-color: #00796b;
-            padding: 12px 0;
+
+            background:
+
+                rgba(0, 0, 0, 0.30) !important;
+
+            padding: 15px 0;
+
+            border-top:
+
+                1px solid rgba(139, 92, 246, 0.10);
         }
 
 
-        /* ==============================
-           TABLETTE
-        ============================== */
+        /* =====================================================
+           EFFETS LUMINEUX
+        ====================================================== */
+
+        .page-section::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 320px;
+
+            height: 320px;
+
+            top: -100px;
+
+            left: -180px;
+
+            background:
+
+                rgba(139, 92, 246, 0.07);
+
+            filter: blur(90px);
+
+            border-radius: 50%;
+
+            pointer-events: none;
+        }
+
+
+        .page-section::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 280px;
+
+            height: 280px;
+
+            right: -150px;
+
+            bottom: -100px;
+
+            background:
+
+                rgba(6, 182, 212, 0.06);
+
+            filter: blur(90px);
+
+            border-radius: 50%;
+
+            pointer-events: none;
+        }
+
+
+        /* =====================================================
+           MOBILE / TABLET
+        ====================================================== */
 
         @media only screen and (max-width: 992px) {
 
             .brand-logo {
+
                 font-size: 1.3rem !important;
             }
 
+
             .section-title {
-                font-size: 2rem;
+
+                font-size: 2.2rem;
             }
 
+
             .carousel.carousel-slider {
+
                 height: 450px;
             }
 
+
             .carousel .carousel-item {
+
                 height: 450px;
             }
 
         }
 
 
-        /* ==============================
+        /* =====================================================
            MOBILE
-        ============================== */
+        ====================================================== */
 
         @media only screen and (max-width: 600px) {
 
             .container {
+
                 width: 92%;
             }
 
+
             .brand-logo {
+
                 font-size: 1.15rem !important;
             }
 
-            .page-section {
-                padding: 30px 0;
+
+            nav,
+            .nav-wrapper {
+
+                height: 62px;
+
+                line-height: 62px;
             }
+
+
+            .page-section {
+
+                padding: 45px 0;
+            }
+
 
             .section-title {
-                font-size: 1.8rem;
+
+                font-size: 1.9rem;
+
                 line-height: 1.3;
-                margin-bottom: 25px;
+
+                margin-bottom: 30px;
             }
 
 
-            /* Projets */
-
             .project-cover {
+
                 height: 170px;
             }
 
+
             .project-title {
+
                 font-size: 1.35rem;
             }
 
+
             .project-description {
+
                 font-size: 0.95rem;
+
                 text-align: left;
+
                 line-height: 1.7;
             }
 
+
             .project-content {
+
                 padding: 20px;
             }
 
 
-            /* Robotique */
+            .project-content > img {
+
+                height: 170px;
+            }
+
 
             .robotics-description {
+
                 font-size: 0.95rem;
+
                 text-align: left;
+
                 line-height: 1.7;
             }
 
 
-            /* Carousel */
-
             .carousel.carousel-slider {
+
                 height: 300px;
             }
+
 
             .carousel .carousel-item {
+
                 height: 300px;
             }
 
+
             .carousel .carousel-item video {
+
                 width: 100%;
+
                 height: 100%;
+
                 object-fit: contain;
             }
 
 
-            /* Footer */
-
             .footer-content {
+
                 text-align: center;
             }
 
+
             .footer-links {
+
                 margin-top: 30px;
             }
 
+
             .footer-copyright {
+
                 font-size: 0.85rem;
             }
 
         }
 
 
-        /* ==============================
+        /* =====================================================
            TRÈS PETITS ÉCRANS
-        ============================== */
+        ====================================================== */
 
         @media only screen and (max-width: 400px) {
 
             .brand-logo {
+
                 font-size: 1rem !important;
             }
 
+
             .section-title {
+
                 font-size: 1.6rem;
             }
 
+
             .project-cover {
+
                 height: 150px;
             }
 
+
             .project-cover .material-icons {
+
                 font-size: 58px;
             }
 
+
             .project-title {
+
                 font-size: 1.25rem;
             }
 
-            .project-description,
-            .robotics-description {
+
+            .project-description {
+
                 font-size: 0.9rem;
             }
 
+
+            .project-content > img {
+
+                height: 150px;
+            }
+
+
             .carousel.carousel-slider {
+
                 height: 250px;
             }
 
+
             .carousel .carousel-item {
+
                 height: 250px;
             }
 
         }
 
     </style>
+
 </head>
 
 
-<body class="grey lighten-4">
+<body>
 
 
-    <!-- ==============================
-         NAVBAR
-    ============================== -->
+<!-- =====================================================
+     NAVBAR
+====================================================== -->
 
-    <nav class="teal lighten-1">
+<nav>
 
-        <div class="nav-wrapper container">
+    <div class="nav-wrapper container">
 
-            <a
-                href="index.html"
-                class="brand-logo"
-            >
-                Ababacar Ndiaye
-            </a>
 
+        <a
+            href="index.html"
+            class="brand-logo"
+        >
 
-            <!-- Bouton menu mobile -->
+            Ababacar Ndiaye
 
-            <a
-                href="#"
-                data-target="mobile-menu"
-                class="sidenav-trigger"
-            >
-                <i class="material-icons">menu</i>
-            </a>
+        </a>
 
 
-            <!-- Menu ordinateur -->
+        <!-- Menu mobile -->
 
-            <ul class="right hide-on-med-and-down">
+        <a
+            href="#"
+            data-target="mobile-menu"
+            class="sidenav-trigger"
+        >
 
-                <li>
-                    <a href="index.html">
-                        Accueil
-                    </a>
-                </li>
+            <i class="material-icons">
+                menu
+            </i>
 
-                <li>
-                    <a href="last_projects.html">
-                        Projets
-                    </a>
-                </li>
+        </a>
 
-                <li>
-                    <a href="about_me.html">
-                        À propos de moi
-                    </a>
-                </li>
 
-            </ul>
+        <!-- Menu ordinateur -->
 
-        </div>
+        <ul class="right hide-on-med-and-down">
 
-    </nav>
+            <li>
 
+                <a href="index.html">
+                    Accueil
+                </a>
 
-    <!-- ==============================
-         MENU MOBILE
-    ============================== -->
+            </li>
 
-    <ul
-        class="sidenav teal lighten-1"
-        id="mobile-menu"
-    >
 
-        <li>
-            <a
-                href="index.html"
-                class="white-text"
-            >
-                Accueil
-            </a>
-        </li>
+            <li>
 
-        <li>
-            <a
-                href="last_projects.html"
-                class="white-text"
-            >
-                Projets
-            </a>
-        </li>
+                <a href="last_projects.html">
+                    Projets
+                </a>
 
-        <li>
-            <a
-                href="about_me.html"
-                class="white-text"
-            >
-                À propos de moi
-            </a>
-        </li>
+            </li>
 
-    </ul>
 
+            <li>
 
-    <!-- ==============================
-         CONTENU PRINCIPAL
-    ============================== -->
+                <a href="about_me.html">
+                    À propos de moi
+                </a>
 
-    <main>
+            </li>
 
+        </ul>
 
-        <!-- ==============================
-             DERNIERS PROJETS
-        ============================== -->
+    </div>
 
-        <section class="page-section projects-section">
+</nav>
 
-            <div class="container">
 
-                <h2 class="center-align grey-text text-darken-2 section-title">
-                    Derniers Projets
-                </h2>
 
+<!-- =====================================================
+     MENU MOBILE
+====================================================== -->
 
-                <div class="row projects-grid">
+<ul
+    class="sidenav"
+    id="mobile-menu"
+>
 
-                    <!-- ==============================
-                         PREMIER PROJET
-                    ============================== -->
+    <li>
 
-                    <div class="col s12 m4 project-col">
+        <a href="index.html">
 
-                        <article class="project-card">
+            Accueil
 
-                            <div class="project-cover">
-                                <i class="material-icons">precision_manufacturing</i>
-                            </div>
+        </a>
 
-                            <div class="project-content">
+    </li>
 
-                                <h3 class="project-title">
-                                    Application FABLAB
-                                </h3>
 
-                                <p class="project-description">
-                                    Application de gestion des emprunts de matériel
-                                    réalisée dans le cadre d'un projet scolaire.
-                                    <a href="https://github.com/ababacar03/projet-fablab" target="_blank">
-                                     Voir sur GitHub
-                                    </a>
-                                </p>
-                                <img src="images/fablab.png" alt="Capture d'écran de l'application FABLAB" class="responsive-img">
+    <li>
 
-                                <div class="project-tech">
-                                    <span class="tech-badge">React</span>
-                                    <span class="tech-badge">MongoDB</span>
-                                </div>
+        <a href="last_projects.html">
 
-                                <div class="project-footer">
-                                    <i class="material-icons tiny">code</i>
-                                    Projet web
-                                </div>
+            Projets
 
-                            </div>
+        </a>
 
-                        </article>
+    </li>
 
-                    </div>
 
+    <li>
 
-                    <!-- ==============================
-                         DEUXIÈME PROJET
-                    ============================== -->
+        <a href="about_me.html">
 
-                    <div class="col s12 m4 project-col">
+            À propos de moi
 
-                        <article class="project-card">
+        </a>
 
-                            <div class="project-cover">
-                                <i class="material-icons">train</i>
-                            </div>
+    </li>
 
-                            <div class="project-content">
+</ul>
 
-                                <h3 class="project-title">
-                                prediction de retard de train
-                                </h3>
 
-                                <p class="project-description">
-                                    Création d'une application de prediction de retard de train 
-                                    <br><br>
-Application web Django dédiée à l’analyse de la régularité ferroviaire et à la prédiction du risque de retard.
 
-RailPulse AI permet de :
+<!-- =====================================================
+     CONTENU PRINCIPAL
+====================================================== -->
 
-importer et consulter des jeux de données CSV ;
-préparer des données de circulation et exploiter des indicateurs historiques ;
-entraîner des modèles de machine learning ;
-prédire le risque de retard pour une ligne et une période données ;
-réaliser des prédictions en lot à partir d’un fichier CSV ;
-consulter l’historique des prédictions, les métriques d’évaluation et le tableau de bord.<br>
-<a href="https://github.com/ababacar03/projet-fablab" target="_blank">
-                                     Voir sur GitHub
-                                    </a>
-                                </p>
-                                <img src="images/Capture d'écran 2026-09-10 115256.png" alt="Capture d'écran de l'application RailPulse AI" class="responsive-img">
+<main>
 
-                                <div class="project-tech">
-                                    <span class="tech-badge">Python et Django 5.2+</span>
-                                    <span class="tech-badge">SQLite</span>
-                                    <span class="tech-badge">HTML</span>
-                                    <span class="tech-badge">CSS</span>
-                                    <span class="tech-badge">JavaScript</span>
-                                </div>
 
-                                <div class="project-image">
-                                   
-                                </div>
+    <!-- =================================================
+         PROJETS
+    ================================================== -->
 
-                                <div class="project-footer">
-                                    <i class="material-icons tiny">code</i>
-                                    Projet web
-                                </div>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-
-                    <!-- ==============================
-                         TROISIÈME PROJET
-                    ============================== -->
-
-                    <div class="col s12 m4 project-col">
-
-                        <article class="project-card">
-
-                            <div class="project-cover">
-                                <i class="material-icons">language</i>
-                            </div>
-
-                            <div class="project-content">
-
-                                <h3 class="project-title">
-                                    Projet Bahbar
-                                </h3>
-
-                                <p class="project-description">
-                                    Création d'une application mobile/web permettant de référencer les bars d’une ville, en
-permettant de choisir un thème, une gamme de prix, une range de notation ou encore la
-localisation.
-<a href="https://github.com/ababacar03/projet-fablab" target="_blank">
-                                     Voir sur GitHub
-                                    </a>
-                                </p>
-                                <img src="images/Logo.svg" alt="Capture d'écran de l'application Bahbar" class="responsive-img">
-
-                                <div class="project-tech">
-                                    <span class="tech-badge">nextJS</span>
-                                    <span class="tech-badge">React native</span>
-                                    <span class="tech-badge">Node.js</span>
-                                </div>
-                                
-
-                                <div class="project-footer">
-                                    <i class="material-icons tiny">web</i>
-                                    Projet web
-                                </div>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- ==============================
-         FOOTER
-    ============================== -->
-
-    <footer class="page-footer">
+    <section class="page-section projects-section">
 
         <div class="container">
 
-            <div class="row footer-content">
+
+            <h2
+                class="center-align section-title"
+            >
+
+                Derniers Projets
+
+            </h2>
 
 
-                <!-- Contact -->
 
-                <div class="col s12 l6">
-
-                    <h5 class="white-text">
-                        Me Contacter
-                    </h5>
-
-                    <p class="grey-text text-lighten-4">
-                        Vous pouvez me joindre via :
-                    </p>
+            <div class="row projects-grid">
 
 
-                    <ul class="footer-links">
+                <!-- =================================================
+                     PROJET FABLAB
+                ================================================== -->
 
-                        <li>
+                <div class="col s12 m4 project-col">
 
-                            Email :
-
-                            <a
-                                href="mailto:ababacar.ndiaye0428@gmail.com"
-                                class="white-text"
-                            >
-                                ababacar.ndiaye0428@gmail.com
-                            </a>
-
-                        </li>
+                    <article class="project-card">
 
 
-                        <li>
+                        <div class="project-cover">
 
-                            Téléphone :
+                            <i class="material-icons">
+                                precision_manufacturing
+                            </i>
 
-                            <a
-                                href="tel:+33626809385"
-                                class="white-text"
-                            >
-                                +33 0626809385
-                            </a>
+                        </div>
 
-                        </li>
 
-                    </ul>
+                        <div class="project-content">
+
+
+                            <h3 class="project-title">
+
+                                Application FABLAB
+
+                            </h3>
+
+
+                            <p class="project-description">
+
+                                Application de gestion des emprunts
+                                de matériel réalisée dans le cadre
+                                d'un projet scolaire.
+
+                                <br><br>
+
+                                <a
+                                    href="https://github.com/ababacar03/projet-fablab"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+
+                                    Voir sur GitHub
+
+                                </a>
+
+                            </p>
+
+
+                            <div class="project-tech">
+
+                                <span class="tech-badge">
+                                    React
+                                </span>
+
+                                <span class="tech-badge">
+                                    MongoDB
+                                </span>
+
+                            </div>
+
+
+                            <div class="project-footer">
+
+                                <i class="material-icons">
+                                    code
+                                </i>
+
+                                Projet web
+
+                            </div>
+
+                        </div>
+
+                    </article>
 
                 </div>
 
 
 
-                <!-- Réseaux sociaux -->
+                <!-- =================================================
+                     PROJET RAILPULSE AI
+                ================================================== -->
 
-                <div class="col s12 l4 offset-l2 footer-links">
+                <div class="col s12 m4 project-col">
 
-                    <h5 class="white-text">
-                        Suivez-moi
-                    </h5>
+                    <article class="project-card">
 
 
-                    <ul>
+                        <div class="project-cover">
 
-                        <li>
+                            <i class="material-icons">
+                                train
+                            </i>
 
-                            <a
-                                href="https://x.com/fn_babs"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="white-text"
-                            >
+                        </div>
+
+
+                        <div class="project-content">
+
+
+                            <h3 class="project-title">
+
+                                Prédiction de retard de train
+
+                            </h3>
+
+
+                            <p class="project-description">
+
+                                Création d'une application de
+                                prédiction de retard de train.
+
+                                <br><br>
+
+                                Application web Django dédiée à
+                                l’analyse de la régularité ferroviaire
+                                et à la prédiction du risque de retard.
+
+                                <br><br>
+
+                                RailPulse AI permet de :
+
+                                <br><br>
+
+                                • importer et consulter des jeux
+                                de données CSV ;
+
+                                <br>
+
+                                • préparer des données de circulation
+                                et exploiter des indicateurs historiques ;
+
+                                <br>
+
+                                • entraîner des modèles de
+                                machine learning ;
+
+                                <br>
+
+                                • prédire le risque de retard pour
+                                une ligne et une période données ;
+
+                                <br>
+
+                                • réaliser des prédictions en lot
+                                à partir d’un fichier CSV ;
+
+                                <br>
+
+                                • consulter l’historique des prédictions,
+                                les métriques d’évaluation et le
+                                tableau de bord.
+
+                                <br><br>
+
+
+                                <a
+                                    href="https://github.com/ababacar03/projet-railpulse_ai"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+
+                                    Voir sur GitHub
+
+                                </a>
+
+                            </p>
+
+                            <div class="project-tech">
+
+                                <span class="tech-badge">
+                                    Python & Django 5.2+
+                                </span>
+
+                                <span class="tech-badge">
+                                    SQLite
+                                </span>
+
+                                <span class="tech-badge">
+                                    HTML
+                                </span>
+
+                                <span class="tech-badge">
+                                    CSS
+                                </span>
+
+                                <span class="tech-badge">
+                                    JavaScript
+                                </span>
+
+                            </div>
+
+
+                            <div class="project-footer">
 
                                 <i class="material-icons">
-                                    alternate_email
+                                    code
                                 </i>
 
-                                Twitter
+                                Projet web
 
-                            </a>
+                            </div>
 
-                        </li>
+                        </div>
 
-
-                        <li>
-
-                            <a
-                                href="https://www.instagram.com/babsnd28/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="white-text"
-                            >
-
-                                <i class="material-icons">
-                                    photo_camera
-                                </i>
-
-                                Instagram
-
-                            </a>
-
-                        </li>
-
-                    </ul>
+                    </article>
 
                 </div>
 
 
+
+                <!-- =================================================
+                     PROJET BAHBAR
+                ================================================== -->
+
+                <div class="col s12 m4 project-col">
+
+                    <article class="project-card">
+
+
+                        <div class="project-cover">
+
+                            <i class="material-icons">
+                                language
+                            </i>
+
+                        </div>
+
+
+                        <div class="project-content">
+
+
+                            <h3 class="project-title">
+
+                                Projet Bahbar
+
+                            </h3>
+
+
+                            <p class="project-description">
+
+                                Création d'une application mobile/web
+                                permettant de référencer les bars
+                                d’une ville, en permettant de choisir
+                                un thème, une gamme de prix, une
+                                range de notation ou encore la
+                                localisation.
+
+                                <br><br>
+
+                                <a
+                                    href="https://github.com/ababacar03/projet-fablab"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+
+                                    Voir sur GitHub
+
+                                </a>
+
+                            </p>
+
+
+                            <div class="project-tech">
+
+                                <span class="tech-badge">
+                                    NextJS
+                                </span>
+
+                                <span class="tech-badge">
+                                    React Native
+                                </span>
+
+                                <span class="tech-badge">
+                                    Node.js
+                                </span>
+
+                            </div>
+
+
+                            <div class="project-footer">
+
+                                <i class="material-icons">
+                                    web
+                                </i>
+
+                                Projet web
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
             </div>
 
         </div>
 
+    </section>
+
+</main>
 
 
-        <!-- Copyright -->
 
-        <div class="footer-copyright">
+<!-- =====================================================
+     FOOTER
+====================================================== -->
 
-            <div class="container center-align">
+<footer class="page-footer">
 
-                © 2026 Ababacar Ndiaye.
-                Tous droits réservés.
+
+    <div class="container">
+
+
+        <div class="row footer-content">
+
+
+            <!-- Contact -->
+
+            <div class="col s12 l6">
+
+
+                <h5>
+
+                    Me Contacter
+
+                </h5>
+
+
+                <p>
+
+                    Vous pouvez me joindre via :
+
+                </p>
+
+
+                <ul class="footer-links">
+
+
+                    <li>
+
+                        Email :
+
+                        <a
+                            href="mailto:ababacar.ndiaye0428@gmail.com"
+                        >
+
+                            ababacar.ndiaye0428@gmail.com
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        Téléphone :
+
+                        <a
+                            href="tel:+33626809385"
+                        >
+
+                            +33 0626809385
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- Réseaux sociaux -->
+
+            <div
+                class="col s12 l4 offset-l2 footer-links"
+            >
+
+
+                <h5>
+
+                    Suivez-moi
+
+                </h5>
+
+
+                <ul>
+
+
+                    <li>
+
+                        <a
+                            href="https://x.com/fn_babs"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            <i class="material-icons">
+                                alternate_email
+                            </i>
+
+                            Twitter
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a
+                            href="https://www.instagram.com/babsnd28/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            <i class="material-icons">
+                                photo_camera
+                            </i>
+
+                            Instagram
+
+                        </a>
+
+                    </li>
+
+                </ul>
 
             </div>
 
         </div>
 
-    </footer>
+    </div>
 
 
 
-    <!-- ==============================
-         MATERIALIZE JAVASCRIPT
-    ============================== -->
+    <!-- Copyright -->
 
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
-    ></script>
+    <div class="footer-copyright">
 
+        <div class="container center-align">
 
-    <script>
+            © 2026 Ababacar Ndiaye.
+            Tous droits réservés.
 
-        document.addEventListener(
-            'DOMContentLoaded',
-            function () {
+        </div>
 
-                /* ==============================
-                   MENU MOBILE
-                ============================== */
+    </div>
 
-                const sidenavs =
-                    document.querySelectorAll('.sidenav');
-
-                M.Sidenav.init(sidenavs);
+</footer>
 
 
-                /* ==============================
-                   CAROUSEL
-                ============================== */
 
-                const carousels =
-                    document.querySelectorAll('.carousel.carousel-slider');
+<!-- =====================================================
+     MATERIALIZE JS
+====================================================== -->
 
-                M.Carousel.init(
-                    carousels,
-                    {
-                        fullWidth: true,
-                        indicators: true
-                    }
-                );
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+></script>
 
 
-                /* ==============================
-                   DÉFILEMENT AUTOMATIQUE
-                ============================== */
+<script>
 
-                setInterval(function () {
+    document.addEventListener(
+        'DOMContentLoaded',
+        function () {
 
-                    const carousel =
-                        M.Carousel.getInstance(carousels[0]);
+            const sidenavs =
+                document.querySelectorAll('.sidenav');
 
-                    if (carousel) {
-                        carousel.next();
-                    }
+            M.Sidenav.init(sidenavs);
 
-                }, 5000);
+        }
+    );
 
-            }
-        );
-
-    </script>
+</script>
 
 
 </body>
