@@ -47,48 +47,58 @@
         }
 
 
-        /* ==================================================
+        /* =====================================================
            GLOBAL
-        ================================================== */
+        ====================================================== */
 
         html {
+
             scroll-behavior: smooth;
         }
 
+
         body {
+
             display: flex;
+
             min-height: 100vh;
+
             flex-direction: column;
+
             margin: 0;
 
             overflow-x: hidden;
 
-            color: var(--text);
-
             background:
+
                 radial-gradient(
-                    circle at top left,
+                    circle at 15% 20%,
                     rgba(139, 92, 246, 0.12),
-                    transparent 35%
-                ),
-                radial-gradient(
-                    circle at top right,
-                    rgba(6, 182, 212, 0.08),
                     transparent 30%
                 ),
-                linear-gradient(
-                    180deg,
-                    var(--bg-dark),
-                    var(--bg-dark-2)
-                );
+
+                radial-gradient(
+                    circle at 85% 70%,
+                    rgba(6, 182, 212, 0.10),
+                    transparent 30%
+                ),
+
+                var(--bg-dark);
+
+            color: var(--text);
         }
 
+
         main {
+
             flex: 1 0 auto;
         }
 
+
         .container {
+
             width: 90%;
+
             max-width: 1200px;
         }
 
