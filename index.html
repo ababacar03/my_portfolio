@@ -1319,194 +1319,105 @@
          CONTACT
     ================================================== -->
 
-    <section class="contact-section">
+  <form
+    action="https://formsubmit.co/ababacar.ndiaye0428@gmail.com"
+    method="POST"
+    id="contact-form"
+>
 
-        <div class="container">
-
-
-            <h2
-                class="center-align section-title contact-title"
+    <!-- Nom -->
+    <div class="row">
+        <div class="input-field col s12 m6">
+            <input
+                id="lastname"
+                name="Nom"
+                type="text"
+                class="validate"
+                required
             >
-
-                Contact
-
-            </h2>
-
-
-
-            <!-- ==============================
-                 FORMULAIRE
-            =============================== -->
-
-            <form
-                action="https://formsubmit.co/ababacar.ndiaye0428@gmail.com"
-                method="POST"
-                id="contact-form"
-            >
-
-
-                <!-- Nom + prénom -->
-
-                <div class="row">
-
-
-                    <div class="input-field col s12 m6">
-
-                        <input
-                            id="lastname"
-                            name="Nom"
-                            type="text"
-                            class="validate"
-                            required
-                        >
-
-                        <label for="lastname">
-
-                            Nom
-
-                        </label>
-
-                    </div>
-
-
-
-                    <div class="input-field col s12 m6">
-
-                        <input
-                            id="firstname"
-                            name="Prénom"
-                            type="text"
-                            class="validate"
-                            required
-                        >
-
-                        <label for="firstname">
-
-                            Prénom
-
-                        </label>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- Email -->
-
-                <div class="row">
-
-                    <div class="input-field col s12">
-
-
-                        <input
-                            id="email"
-                            name="email"
-                            type="email"
-                            class="validate"
-                            required
-                        >
-
-
-                        <label for="email">
-
-                            Email
-
-                        </label>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- Message -->
-
-                <div class="row">
-
-                    <div class="input-field col s12">
-
-
-                        <textarea
-                            id="message"
-                            name="message"
-                            class="materialize-textarea"
-                            required
-                        ></textarea>
-
-
-                        <label for="message">
-
-                            Votre message
-
-                        </label>
-
-
-                        <small>
-
-                            Suggestions :
-                            "Je voudrais plus
-                            d'informations sur..."
-                            ou
-                            "J'ai rencontré un problème
-                            avec..."
-
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- ==============================
-                     OPTIONS FORMSUBMIT
-                =============================== -->
-
-                <input
-                    type="hidden"
-                    name="_subject"
-                    value="Nouveau message depuis mon portfolio"
-                >
-
-
-                <input
-                    type="hidden"
-                    name="_captcha"
-                    value="false"
-                >
-
-
-
-                <!-- ==============================
-                     BOUTON ENVOYER
-                =============================== -->
-
-                <div
-                    class="row center-align submit-container"
-                >
-
-                    <button
-                        class="btn waves-effect waves-light"
-                        type="submit"
-                        id="submit-btn"
-                    >
-
-                        Envoyer
-
-                        <i class="material-icons right">
-                            send
-                        </i>
-
-                    </button>
-
-                </div>
-
-            </form>
-
+            <label for="lastname">Nom</label>
         </div>
 
-    </section>
+        <!-- Prénom -->
+        <div class="input-field col s12 m6">
+            <input
+                id="firstname"
+                name="Prénom"
+                type="text"
+                class="validate"
+                required
+            >
+            <label for="firstname">Prénom</label>
+        </div>
+    </div>
+
+    <!-- Email -->
+    <div class="row">
+        <div class="input-field col s12">
+            <input
+                id="email"
+                name="email"
+                type="email"
+                class="validate"
+                required
+            >
+            <label for="email">Email</label>
+        </div>
+    </div>
+
+    <!-- Message -->
+    <div class="row">
+        <div class="input-field col s12">
+            <textarea
+                id="message"
+                name="message"
+                class="materialize-textarea"
+                required
+            ></textarea>
+
+            <label for="message">Votre message</label>
+
+            <small>
+                Suggestions :
+                "Je voudrais plus d'informations sur..."
+                ou
+                "J'ai rencontré un problème avec..."
+            </small>
+        </div>
+    </div>
+
+    <!-- FORMSUBMIT -->
+    <input
+        type="hidden"
+        name="_subject"
+        value="Nouveau message depuis mon portfolio"
+    >
+
+    <input
+        type="hidden"
+        name="_captcha"
+        value="false"
+    >
+
+    <input
+        type="hidden"
+        name="_next"
+        value="https://ababacar03.github.io/my_portfolio/"
+    >
+
+    <!-- Bouton -->
+    <div class="row center-align submit-container">
+        <button
+            class="btn waves-effect waves-light"
+            type="submit"
+            id="submit-btn"
+        >
+            Envoyer
+            <i class="material-icons right">send</i>
+        </button>
+    </div>
+
+</form>
 
 </main>
 
