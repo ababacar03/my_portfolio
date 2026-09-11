@@ -1319,55 +1319,96 @@
          CONTACT
     ================================================== -->
 
-  <form
+ <!-- =================================================
+     FORMULAIRE DE CONTACT
+================================================== -->
+
+<form
     action="https://formsubmit.co/ababacar.ndiaye0428@gmail.com"
     method="POST"
     id="contact-form"
 >
 
-    <!-- Nom -->
+    <!-- =============================================
+         NOM + PRÉNOM
+    ============================================== -->
+
     <div class="row">
+
+        <!-- Nom -->
         <div class="input-field col s12 m6">
+
             <input
                 id="lastname"
                 name="Nom"
                 type="text"
                 class="validate"
+                autocomplete="family-name"
                 required
             >
-            <label for="lastname">Nom</label>
+
+            <label for="lastname">
+                Nom
+            </label>
+
         </div>
+
 
         <!-- Prénom -->
         <div class="input-field col s12 m6">
+
             <input
                 id="firstname"
                 name="Prénom"
                 type="text"
                 class="validate"
+                autocomplete="given-name"
                 required
             >
-            <label for="firstname">Prénom</label>
+
+            <label for="firstname">
+                Prénom
+            </label>
+
         </div>
+
     </div>
 
-    <!-- Email -->
+
+    <!-- =============================================
+         EMAIL
+    ============================================== -->
+
     <div class="row">
+
         <div class="input-field col s12">
+
             <input
                 id="email"
                 name="email"
                 type="email"
                 class="validate"
+                autocomplete="email"
                 required
             >
-            <label for="email">Email</label>
+
+            <label for="email">
+                Email
+            </label>
+
         </div>
+
     </div>
 
-    <!-- Message -->
+
+    <!-- =============================================
+         MESSAGE
+    ============================================== -->
+
     <div class="row">
+
         <div class="input-field col s12">
+
             <textarea
                 id="message"
                 name="message"
@@ -1375,7 +1416,9 @@
                 required
             ></textarea>
 
-            <label for="message">Votre message</label>
+            <label for="message">
+                Votre message
+            </label>
 
             <small>
                 Suggestions :
@@ -1383,38 +1426,60 @@
                 ou
                 "J'ai rencontré un problème avec..."
             </small>
+
         </div>
+
     </div>
 
-    <!-- FORMSUBMIT -->
+
+    <!-- =============================================
+         CONFIGURATION FORMSUBMIT
+    ============================================== -->
+
+    <!-- Sujet de l'email reçu -->
     <input
         type="hidden"
         name="_subject"
         value="Nouveau message depuis mon portfolio"
     >
 
+
+    <!-- Désactive le captcha FormSubmit -->
     <input
         type="hidden"
         name="_captcha"
         value="false"
     >
 
+
+    <!-- Redirection après l'envoi -->
     <input
         type="hidden"
         name="_next"
         value="https://ababacar03.github.io/my_portfolio/"
     >
 
-    <!-- Bouton -->
+
+    <!-- =============================================
+         BOUTON ENVOYER
+    ============================================== -->
+
     <div class="row center-align submit-container">
+
         <button
             class="btn waves-effect waves-light"
             type="submit"
             id="submit-btn"
         >
+
             Envoyer
-            <i class="material-icons right">send</i>
+
+            <i class="material-icons right">
+                send
+            </i>
+
         </button>
+
     </div>
 
 </form>
